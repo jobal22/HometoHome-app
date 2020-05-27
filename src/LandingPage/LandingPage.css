@@ -1,0 +1,52 @@
+.Landing {
+    font-family: "Open Sans",
+    sans-serif; 
+    font-size: 20px;
+    color: #444;
+    text-align: center;
+    line-height: 1.5;
+  }
+  
+  .Landing__nav {
+    padding: 1% 0;
+    background-color: #aaa;
+  }
+  
+  .Landing__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+  
+  
+  
+  header {
+    padding: 12% 0;
+  }
+  
+  section {
+    min-height: 200px;
+    padding: 6% 0;
+    background-color: #bbb;
+  }
+  
+  section:nth-child(even) {
+    background-color: #ddd;
+  }
+
+  .Landing__link {
+      min-height: 70px;
+      padding: 6% 0;
+      background-color: rgb(248, 245, 245);
+  
+  }
+  
+  .homePage {
+    background-color: #686868;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 7px;
+  }
