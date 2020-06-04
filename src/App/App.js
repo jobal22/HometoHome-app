@@ -116,7 +116,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <nav className="App__nav" >
-          <Link to={`/main`}>Nav</Link>
+          <Link to={"/main"}>Nav</Link>
         </nav>
         <main>
           <div>
