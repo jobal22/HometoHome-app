@@ -7,9 +7,9 @@ import Administration from '../Administration/Administration.js'
 import Address from '../Address/Address.js'
 import Addresses from '../Addresses/Addresses.js'
 import AddAddress from '../AddAddress/AddAddress.js'
-import EditAddress from '../EditAddress/EditAddress.js'
-import AdminTeams from '../AdminTeams/AdminTeams.js'
-import ListsForGroups from '../ListsForGroups/ListsForGroups.js'
+import AddressSubmission from '../AddressSubmission/AddressSubmission.js'
+import Users from '../Users/Users.js'
+import ListsForUsers from '../ListsForUsers/ListsForUsers.js'
 import config from '../config'
 import LandingPage from '../LandingPage/LandingPage.js'
 import './App.css'
@@ -92,10 +92,10 @@ export default class App extends Component {
         <Route exact path = "/main" component={HomePage}/>
         <Route path = "/main/admin" component={Administration}/>
         <Route exact path = "/main/addresses" component={Addresses}/>
-        <Route exact path = "/main/adminteams" component={AdminTeams}/>
-        <Route path = "/main/adminteams/list/:listId" component={ListsForGroups}/>
+        <Route exact path = "/main/users" component={Users}/>
+        <Route path = "/main/users/list/:listId" component={ListsForUsers}/>
         <Route path = "/main/address/:addressId" component={Address}/>
-        <Route path = "/main/edit/:addressId" component={EditAddress}/>
+        <Route path = "/main/address-submission/:addressId" component={AddressSubmission}/>
         <Route path = "/add-address" component={AddAddress}/>
       </>
     )

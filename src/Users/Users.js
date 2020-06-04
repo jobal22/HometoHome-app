@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom';
 import STORE from '../Store/dummy-store';
 import HometoHomeContext from '../Context/HometoHomeContext'
-import './AdminTeams.css'
+import './Users.css'
 import PropTypes from 'prop-types'
 import List from '../Lists/Lists.js';
 
-export default class AdminTeams extends Component {
+export default class Users extends Component {
     static defaultProps = {
         match: {
           params: {}
@@ -17,7 +17,7 @@ export default class AdminTeams extends Component {
         const {addresses=[], lists=[]} = this.context
         // console.log('herehereher', this.context)
         return (
-            <div className="adminTeams">
+            <div className="users">
                 <header className="Header">
                     <h1>Home to Home</h1>
                 </header>
@@ -28,7 +28,7 @@ export default class AdminTeams extends Component {
                     //     name={list.name}
                     //     addresses={list.addressIds.map(id => addresses[id])}
                     // />
-                    <Link key={list.id} to={`/main/adminteams/list/${list.id}`}>
+                    <Link key={list.id} to={`/main/users/list/${list.id}`}>
                         <h3>{list.name}</h3>
                     </Link>
                 )}

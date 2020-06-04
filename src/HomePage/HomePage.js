@@ -47,16 +47,16 @@ export default class HomePage extends Component {
                         addresses={list.addressIds.map(id => this.props.store.store.addresses[id])}
                     />
                 )} */}
-                <section>
+                {/* <section>
                     <Link to={ '/main/addresses'}>Addresses</Link>
-                </section>
+                </section> */}
 
                 <section>
                     <Link to={ '/main/admin'}>Administration</Link>
                 </section>
 
                 <section>
-                    <Link to={ '/main/adminteams'}>Admin-Teams</Link>
+                    <Link to={ '/main/users'}>Users</Link>
                 </section>
 
             </div>

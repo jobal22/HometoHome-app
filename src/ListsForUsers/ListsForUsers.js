@@ -7,13 +7,13 @@ import Teams from '../Teams/Teams.js'
 import AddressCard from '../AddressCard/AddressCard.js'
 import TeamAssignment from '../TeamAssignment/TeamAssignment'
 import AddTeam from '../AddTeam/AddTeam'
-import EditAddress from '../EditAddress/EditAddress.js'
+import EditAddress from '../AddressSubmission/AddressSubmission.js'
 import config from '../config';
 import PropTypes from 'prop-types'
-import './ListsForGroups.css'
+import './ListsForUsers.css'
 
 
-export default class ListsForGroups extends Component {
+export default class ListsForUsers extends Component {
     // static defaultProps = {
     //     history: {
     //       goBack: () => { }
@@ -158,7 +158,7 @@ export default class ListsForGroups extends Component {
                   //   <button type="submit" >Submit</button>
                   //   </form>
                   // </div>
-                  <Link to={`/main/edit/${a.id}`}><h3>{a.street} {a.city} {a.state} {a.zip} {''} </h3><br></br></Link>
+                  <Link to={`/main/address-submission/${a.id}`}><h3>{a.street} {a.city} {a.state} {a.zip} {''} </h3><br></br></Link>
                   
                   )}
                 </section>
