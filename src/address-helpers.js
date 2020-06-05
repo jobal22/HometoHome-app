@@ -7,7 +7,7 @@ lists.find(list => list.id == listId)
 export const getAddressesForList = (addresses=[], addressId) => (
     (!addressId)
       ? addresses
-      : addresses.filter(address => address.gospelPresentation == addressId)
+      : addresses.filter(address => address.gospelpresentation == addressId)
 )
 
 // export const getNotesForFolder = (addresses=[], gpId) => (

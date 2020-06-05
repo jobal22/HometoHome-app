@@ -19,37 +19,47 @@ export default class App extends Component {
   state = {
     addresses: [],
     lists: [],
-    teams: [],
     newAddress: {
       hassError: false,
       touched: false,
       name: '',
     },
-    newTeam: {
-      hassError: false,
-      touched: false,
-      name: '',
-    },
-
   }
   // state = {
   //   store: STORE,
   // };
 
+  setAddresses = addresses => {
+    this.setState({
+      addresses
+    })
+  }
+  
+  setLists = lists => {
+    this.setState({
+      lists
+    })
+  }
+
+  addAddress = address => {
+    this.setState({
+      addresses: [ ...this.state.addresses, address ],
+    })
+  }
+
   componentDidMount() {
     Promise.all([
       fetch(`${config.API_ENDPOINT}/api/addresses`),
       fetch(`${config.API_ENDPOINT}/api/lists`),
-      fetch(`${config.API_ENDPOINT}/api/teams`),
+      // fetch(`${config.API_ENDPOINT}/api/teams`),
     ])
-      .then(([addressesRes, listsRes, teamsRes]) => {
+      .then(([addressesRes, listsRes]) => {
         if (!addressesRes.ok) return addressesRes.json().then(e => Promise.reject(e))
         if (!listsRes.ok) return listsRes.json().then(e => Promise.reject(e))
-        if (!teamsRes.ok) return teamsRes.json().then(e => Promise.reject(e))
-        return Promise.all([addressesRes.json(), listsRes.json(), teamsRes.json()])
+        return Promise.all([addressesRes.json(), listsRes.json()])
       })
-      .then(([addresses, lists, teams]) => {
-        this.setState({ addresses, lists, teams })
+      .then(([addresses, lists]) => {
+        this.setState({ addresses, lists })
       })
       .catch(error => {
         console.error({ error })
@@ -59,22 +69,6 @@ export default class App extends Component {
   handleAddAddress = address => {
     this.setState({
       addresses: [...this.state.addresses, address],
-    })
-  }
-
-  handleAddTeam = team => {
-    this.setState({
-      teams: [...this.state.teams, team],
-    })
-  }
-
-  updateNewTeamName = name => {
-    this.setState({
-      newTeam: {
-        hasError: false,
-        touched: true,
-        name: name,
-      },
     })
   }
 
@@ -106,7 +100,6 @@ export default class App extends Component {
     const contextValue = {
       addresses: this.state.addresses,
       lists: this.state.lists,
-      teams: this.state.teams,
       addTeam: this.handleAddTeam,
       newTeam: this.state.newTeam,
       updateNewTeamName: this.updateNewTeamName,

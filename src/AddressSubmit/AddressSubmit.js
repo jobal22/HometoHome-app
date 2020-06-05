@@ -85,8 +85,8 @@ class AddressSubmit extends Component {
             </label>
             <input
               type='number'
-              name='rating'
-              id='rating'
+              name='salvation'
+              id='salvation'
               defaultValue='0'
               min='0'
               max='20'

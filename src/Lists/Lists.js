@@ -32,8 +32,8 @@ export default function List(props) {
                 zip={address.zip}
                 name={address.name}
                 phone={address.phone}
-                gospelPresentation={address.gospelPresentation}
-                new-Salvations={address.newSalvations}
+                gospelpresentation={address.gospelpresentation}
+                newsalvations={address.newsalvations}
                 notes={address.notes}
 
             />

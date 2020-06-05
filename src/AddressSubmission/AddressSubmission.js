@@ -42,12 +42,11 @@ export default class ListsForGroups extends Component {
         city: '',
         state: '',
         zip: '',
-        name:'',
-        phone: '',
-        gospelPresentation: '',
-        newSalvations: '',
-        notes: '',
-        teamId: '',
+        name:'N/A',
+        phone: '0',
+        gospelpresentation: 'N/A',
+        newsalvations: 0,
+        notes: 'N/A'
       };
 
       // componentDidMount() {
@@ -67,16 +66,15 @@ export default class ListsForGroups extends Component {
       //     .then(responseData => {
       //       this.setState({
       //         id: responseData.id,
-      //         name: responseData.name,
+      //         street: responseData.street,
       //         city: responseData.city,
       //         state: responseData.state,
       //         zip: responseData.zip,
       //         name: responseData.name,
       //         phone: responseData.phone,
-      //         gospelPresentation: responseData.gospelPresentation,
-      //         newSalvations: responseData.newSalvations,
-      //         notes: responseData.notes,
-      //         teamId: responseData.teamId,
+      //         gospelpresentation: responseData.gospelpresentation,
+      //         newsalvations: responseData.newsalvations,
+      //         notes: responseData.notes
       //       })
       //     })
       //     .catch(error => {
@@ -85,16 +83,37 @@ export default class ListsForGroups extends Component {
       //     })
       // }
 
-      handleChangeTeam = e => {
-        this.setState({ team: e.target.value })
+      // handleChangeTeam = e => {
+      //   this.setState({ team: e.target.value })
+      // };
+      handleChangeName = e => {
+        this.setState({ name: e.target.value })
       };
 
-      handleSubmit = e => {
+      handleChangePhone = e => {
+        this.setState({ phone: e.target.value })
+      };
+
+      handleChangeGospelPresentation = e => {
+        console.log(e.target.id, 'gospelLabel')
+        this.setState({ gospelpresentation: e.target.id})
+      };
+
+      handleChangeNewSalvations = e => {
+        this.setState({ newsalvations: e.target.value })
+      };
+
+      handleChangeNotes = e => {
+        this.setState({ notes: e.target.value })
+      };
+
+      handleSubmit = (e, address) => {
         e.preventDefault()
         const { addressId } = this.props.match.params
-        const { teamId } = this.state
-        const newAddress = { teamId }
-        fetch(config.API_ENDPOINT + `/${addressId}`, {
+        const { street, city, state, zip, name, phone, gospelpresentation, newsalvations, notes } = this.state
+        const newAddress = { ...address, name, phone, gospelpresentation, newsalvations, notes }
+        console.log(newAddress)
+        fetch(config.API_ENDPOINT + `/api/addresses/${addressId}`, {
           method: 'PATCH',
           body: JSON.stringify(newAddress),
           headers: {
@@ -106,63 +125,51 @@ export default class ListsForGroups extends Component {
               return res.json().then(error => Promise.reject(error))
           })
           .then(() => {
-            this.resetFields(newAddress)
+            // this.resetFields(newAddress)
             this.context.updateAddress(newAddress)
-            // this.props.history.push('/')
+            this.props.history.push('/main/users')
           })
           .catch(error => {
             console.error(error)
             this.setState({ error })
           })
       }
+
+      handleClickCancel = () => {
+        this.props.history.push('/main/users')
+      };
+    
     
 
-      parseTeams = () => {
-        return this.context.teams.map(team => (
-          <option key={team.team_id} value={team.id}>
-            {team.name}
-          </option>
-        ))
-      }
+      // parseTeams = () => {
+      //   return this.context.teams.map(team => (
+      //     <option key={team.team_id} value={team.id}>
+      //       {team.name}
+      //     </option>
+      //   ))
+      // }
+      
     render() {
         const {addresses=[]}= this.context
         const { addressId} = this.props.match.params
         const address = findAddress (addresses, addressId) || {}
-        const { error } = this.state
+        const { error, name, phone, salvation, notes  } = this.state
         // const address = addresses.filter(address=>list.gpId == address.gospelPresentation && list.nsId == address.newSalvations);
-        console.log('AAAAHHHHH!!!!', address )
+        console.log('AAAAHHHHH!!!!', this.props )
         return (
             <div className="listsTeams">
                 <section>
                     <h3>{address.street} {address.city} {address.state} {address.zip}</h3>
                 </section>
                 <section>
-                   {/* <form
-                      className='EditBookmark__form'
-                      onSubmit={this.handleSubmit}
-                    >
-                    <select
-                    name="teams"
-                    id="teams"
-                    aria-required="true"
-                    aria-label="Select a Team"
-                    onChange={this.handleChangeTeam}
-                    required
-                    >
-                      <option value={''}>Choose A Team</option>
-                      {this.parseTeams()}
-                    </select>
-                    {" "}
-                    <button type="submit" >Submit</button>
-                    </form> */}
-
                     <form
                         className='AddressSubmit__form'
-                        onSubmit={this.handleSubmit}
+                        // onSubmit={this.handleSubmit}
+                        onSubmit={(e) => this.handleSubmit(e,address)}
                         >
-                        <div className='AddressSubmit__error' role='alert'>
+                        {/* <div className='AddressSubmit__error' role='alert'>
                             {error && <p>{error.message}</p>}
-                        </div>
+                        </div> */}
                         <div>
                             <label htmlFor='name'>
                             Name
@@ -175,18 +182,22 @@ export default class ListsForGroups extends Component {
                             id='name'
                             placeholder='Brad Tyler'
                             required
+                            value={name}
+                            onChange={this.handleChangeName}
                             />
                         </div>
                         <div>
-                            <label htmlFor='number'>
+                            <label htmlFor='phone'>
                             Phone:
                             {' '}
                             </label>
                             <input
                             type='text'
-                            name='number'
-                            id='number'
+                            name='phone'
+                            id='phone'
                             placeholder='123-345-6789'
+                            value={phone}
+                            onChange={this.handleChangePhone}
                             />
                         </div>
                         <div>
@@ -196,8 +207,9 @@ export default class ListsForGroups extends Component {
                             <Required />
                             </label>
                             <label>
-                                <input type="radio" name="gospel" value="Yes" /> Yes {' '}
-                                <input type="radio" name="gospel" value="No" required/> No
+                              
+                                <input type="radio" name="gospel" id="yes" onChange={this.handleChangeGospelPresentation}/> Yes {' '}
+                                <input type="radio" name="gospel" id="no" onChange={this.handleChangeGospelPresentation}/> No
                             </label>
                         </div>
                         <div>
@@ -208,12 +220,14 @@ export default class ListsForGroups extends Component {
                             </label>
                             <input
                             type='number'
-                            name='rating'
-                            id='rating'
+                            name='salvation'
+                            id='salvation'
                             defaultValue='0'
                             min='0'
                             max='20'
                             required
+                            value={salvation}
+                            onChange={this.handleChangeNewSalvations}
                             />
                         </div>
                         <div>
@@ -223,6 +237,8 @@ export default class ListsForGroups extends Component {
                             <textarea
                             name='notes'
                             id='notes'
+                            value={notes}
+                            onChange={this.handleChangeNotes}
                             />
                         </div>
                         <div className='AddressSubmit__buttons'>

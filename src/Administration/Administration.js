@@ -59,8 +59,8 @@ export default class Administration extends Component {
                         id={list.id}
                         name={list.name}
                         addresses={addresses.filter(address => 
-                            address.gospelPresentation === list.gpId 
-                            && address.newSalvations === list.nsId)}
+                            address.gospelpresentation === list.gpid 
+                            && address.newsalvations === list.nsid)}
                         // addresses={list.addressIds.map(id => addresses[id])}
                         // addresses={list.nsId.map(newSalvations => addresses.newSalvations)}
                         // addresses={doneB.map(doneA => doneA)}

@@ -58,8 +58,8 @@ static contextType = HometoHomeContext;
       Zip: {a.zip}<br></br>
       Name: {a.name}<br></br>
       Phone: {a.phone}<br></br>
-      Was the Gospel Presented? {a.gospelPresentation}<br></br>
-      Were there any new salvations? {a.newSalvations}<br></br>
+      Was the Gospel Presented? {a.gospelpresentation}<br></br>
+      Were there any new salvations? {a.newsalvations}<br></br>
       Notes: {a.notes}</p>
       )}
       {/* <p>name:{props.name} </p>

@@ -42,8 +42,8 @@ export default class ListsForUsers extends Component {
         zip: '',
         name:'',
         phone: '',
-        gospelPresentation: '',
-        newSalvations: '',
+        gospepresentation: '',
+        newsalvations: '',
         notes: '',
         teamId: '',
       };
@@ -126,69 +126,18 @@ export default class ListsForUsers extends Component {
         const {lists=[], addresses=[], teams=[], addressesMap}= this.context
         const { listId} = this.props.match.params
         const list = findList (lists, listId) || {}
-        const address = addresses.filter(address=>list.gpId == address.gospelPresentation && list.nsId == address.newSalvations);
-        console.log('jobal look here', address )
+        const address = addresses.filter(address=>list.gpid == address.gospelpresentation && list.nsid == address.newsalvations);
+        console.log('jobal look here', this.props.match.params.listId )
         return (
             <div className="listsTeams">
               <section>
                 <h3>{list.name}</h3>
               </section>
-                {/* <section>
-                  <AddTeam/>
-                </section> */}
                 <section onSubmit={this.handleSubmit}>
                 {address.map(a =>
-                  // <div key={a.id}>{a.street} {a.city} {a.state} {a.zip} {" "}
-                  //   <form
-                  //     className='EditBookmark__form'
-                  //     onSubmit={this.handleSubmit}
-                  //   >
-                  //   <select
-                  //   name="teams"
-                  //   id="teams"
-                  //   aria-required="true"
-                  //   aria-label="Select a Team"
-                  //   onChange={this.handleChangeTeam}
-                  //   required
-                  //   >
-                  //     <option value={''}>Choose A Team</option>
-                  //     {this.parseTeams()}
-                  //   </select>
-                  //   {" "}
-                  //   <button type="submit" >Submit</button>
-                  //   </form>
-                  // </div>
-                  <Link to={`/main/address-submission/${a.id}`}><h3>{a.street} {a.city} {a.state} {a.zip} {''} </h3><br></br></Link>
-                  
+                  <Link to={`/main/address-submission/${a.id}`}><h3 name='greg'>{a.street} {a.city} {a.state} {a.zip} {''} </h3><br></br></Link>
                   )}
                 </section>
-                
-                {/* <section>
-                {team.map(t =>
-                  <p key={t.id}>{t.name}</p>)}
-                </section> */}
-
-                {/* this shows teams in groups */}
-                {/* <section>
-                {team.map(t =>
-                  <Teams
-                      key={t.id}
-                      id={t.id}
-                      name={t.name}
-                      //this looks at address related to gpId & nsId
-                      //the problem is that each group for this list has the same gpId & nsId
-                      // addresses={addresses.filter(address => 
-                      //     address.gospelPresentation === t.gpId 
-                      //     && address.newSalvations === t.nsId
-                      // )}
-
-                      addresses={t.addrIds.map(id => addresses[id])}
-
-                  />
-                )}
-                </section> */}
-
-
             </div>
         )
     }
