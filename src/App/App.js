@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom';
-import STORE from '../Store/dummy-store';
 import HometoHomeContext from '../Context/HometoHomeContext'
 import HomePage from '../HomePage/HomePage.js'
 import Administration from '../Administration/Administration.js'
-import AddressCard from '../AddressCard/AddressCard.js'
 import EditAddress from '../EditAddress/EditAddress.js'
-import Address from '../Address/Address.js'
 import Addresses from '../Addresses/Addresses.js'
 import AddAddress from '../AddAddress/AddAddress.js'
 import AdminAddAddress from '../AdminAddAddress/AdminAddAddress.js'
@@ -28,9 +25,6 @@ export default class App extends Component {
       name: '',
     },
   }
-  // state = {
-  //   store: STORE,
-  // };
 
   setAddresses = addresses => {
     this.setState({
@@ -44,17 +38,10 @@ export default class App extends Component {
     })
   }
 
-  // addAddress = address => {
-  //   this.setState({
-  //     addresses: [ ...this.state.addresses, address ],
-  //   })
-  // }
-
   componentDidMount() {
     Promise.all([
       fetch(`${config.API_ENDPOINT}/api/addresses`),
       fetch(`${config.API_ENDPOINT}/api/lists`),
-      // fetch(`${config.API_ENDPOINT}/api/teams`),
     ])
       .then(([addressesRes, listsRes]) => {
         if (!addressesRes.ok) return addressesRes.json().then(e => Promise.reject(e))
@@ -95,7 +82,6 @@ export default class App extends Component {
         <Route exact path="/" component={LandingPage}/>
         <Route exact path = "/main" component={HomePage}/>
         <Route path = "/main/admin" component={Administration}/>
-        <Route exact path = "/main/addresses" component={Address}/>
         <Route exact path = "/main/users" component={Users}/>
         <Route path = "/main/users/list/:listId" component={ListsForUsers}/>
         <Route path = "/main/address/:addressId" component={Addresses}/>
@@ -108,7 +94,6 @@ export default class App extends Component {
   }
 
   render() {
-    const store = this.state;
     const contextValue = {
       addresses: this.state.addresses,
       lists: this.state.lists,
@@ -131,34 +116,6 @@ export default class App extends Component {
                 <main className="App__main">{this.renderMainRoutes()}</main>
               </div>
               </HometoHomeContext.Provider>
-              {/* <Route
-                exact
-                path = "/"
-                render = {routeProps => {
-                  return <LandingPage {...routeProps} store={store}/>
-                }}
-              />
-
-            <Route
-                exact
-                path = "/main"
-                render = {routeProps => {
-                  return <HomePage {...routeProps} store={store}/>
-                }}
-              />
-            <Route
-                path = "/main/admin"
-                render = {routeProps => {
-                  return <Administration {...routeProps} store={store}/>
-                }}
-              />
-            <Route
-                path = "/main/address/:addressId"
-                render = {routeProps => {
-                  return <Address {...routeProps} store={store}/>
-                }}
-              /> */}
-
           </div>
         </main>
       </div>

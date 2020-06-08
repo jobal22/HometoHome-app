@@ -1,33 +1,3 @@
-// import React, { Component } from 'react'
-// import {Link} from 'react-router-dom'
-// import HometoHomeContext from '../Context/HometoHomeContext'
-// import './Addresses.css';
-
-// export default function address(props) {
-  
-//   return (
-//     <div className='Card'>
-//       {/* <button 
-//         onClick={() => props.onDeleteItem(props.id)}
-//         type="button">
-//           delete
-//       </button> */}
-//       <Link to={`/main/address/${props.id}`}>
-//           {props.street}{' '}{props.city}{' '}{props.state}{' '}{props.zip}
-//       </Link>
-//       <p>name:{props.name} </p>
-//       <p>phone:{props.phone}</p>
-//       <p>Was the gospel presented? {props.gospelPresentation}</p>
-//       <p>Were there any new salvations? {props.newSalvations}</p>
-//       <p>note:{props.notes}</p>
-//     </div>
-//   );
-// }
-
-// address.propTypes = {
-//   onDeleteItem: () => {}
-// }
-
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import HometoHomeContext from '../Context/HometoHomeContext'
@@ -45,7 +15,6 @@ static contextType = HometoHomeContext;
     const {addresses=[]}= this.context
     const { addressId} = this.props.match.params
     const a = findAddress (addresses, addressId) || {}
-console.log('herehereher', a)
     return (
       <div className="totalAddress">
         <section>

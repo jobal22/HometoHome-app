@@ -1,4 +1,4 @@
-import React, { Component } from  'react';
+import React from  'react';
 import PropTypes from 'prop-types';
 import HometoHomeContext from '../Context/HometoHomeContext';
 import config from '../config'
@@ -9,12 +9,6 @@ const Required = () => (
 )
 
 export default class AddAddress extends React.Component {
-
-//   static propTypes = {
-//     history: PropTypes.shape({
-//       push: PropTypes.func,
-//     }).isRequired,
-//   };
 
   static propTypes = {
     match: PropTypes.shape({
@@ -67,10 +61,6 @@ export default class AddAddress extends React.Component {
     }
   }
 
-
-  // state = {
-  //   error: null,
-  // };
 
   handleAddressStreet = (e) => {
     let {street} = this.state
@@ -126,45 +116,6 @@ export default class AddAddress extends React.Component {
     this.setState({notes})
   }
 
-
-  // handleFormSubmit = (e) => {
-    // e.preventDefault(e)
-    // const { street, city, state, zip, teamId} = e.target
-    // const newAddress = {
-    //   street: this.state.street.value,
-    //   city: this.state.city.value,
-    //   state: this.state.state.value,
-    //   zip: this.state.zip.value,
-    //   teamId: this.state.teamId.value,
-    // }
-    // this.setState({error:null})
-    // fetch(`${config.API_ENDPOINT}/api/addresses`, {
-    //       method: 'POST',
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify(newAddress),
-    //     })
-    //     .then(res => {
-    //       if (!res.ok)
-    //         return res.json().then(e => Promise.reject(e))
-    //       return res.json()
-    //     })
-    //     .then(address => {
-    //       street.value = ''
-    //       city.value = ''
-    //       state.value = ''
-    //       zip.value = ''
-    //       teamId.value = ''
-    //       this.context.addAddress(address)
-    //       this.props.history.push('/main')
-    //     })
-    //     .catch(error => {
-    //       console.error('there is a problem')
-    //     })
-    //   }
-
-
   handleFormSubmit = (e) => {
     e.preventDefault(e)
     const newAddress = {
@@ -177,12 +128,7 @@ export default class AddAddress extends React.Component {
       gospelpresentation: this.state.gospelpresentation.value,
       newsalvations: this.state.newsalvations.value,
       notes: this.state.notes.value
-      // teamId: this.state.teamId.value,
     }
-
-    // if (newAddress.street === '' || newAddress.city === '' || newAddress.state === '') {
-    //   return 
-    // }  
 
     fetch(`${config.API_ENDPOINT}/api/addresses`, {
           method: 'POST',
@@ -190,29 +136,17 @@ export default class AddAddress extends React.Component {
           headers: {
             'content-type': 'application/json',
           },
-
-          // headers: {
-          //   'Content-Type': 'application/json',
-          // },
-          // body: JSON.stringify(newAddress),
         })
-        // .then(res => {
-        //   if (!res.ok)
-        //     return res.json().then(e => Promise.reject(e))
-        //   return res.json()
-        // })
         .then(res => {
           if (!res.ok)
             return res.json().then(error => Promise.reject(error))
         })
         .then(() => {
           this.context.handleAddAddress(newAddress)
-          // this.props.history.push('/main/users')
           this.props.history.goBack()
 
         })
         .catch(error => {
-          // console.error('there is a problem')
           console.error(error)
           this.setState({ error })
 
@@ -224,19 +158,8 @@ export default class AddAddress extends React.Component {
     this.props.history.push('/main/users')
   };
 
-//   parseTeams = () => {
-//     return this.context.teams.map(team => (
-//       <option key={team.teamId} value={team.id}>
-//         {team.name}
-//       </option>
-//     ))
-//   }
-
-
   render() {
-    // const { error } = this.state
-    const { error, zip, name, email, salvation, notes  } = this.state
-    console.log(this.state)
+    const { salvation } = this.state
     return (
       <section className='AddAddress'>
         <h2>Add Address</h2>
@@ -244,9 +167,6 @@ export default class AddAddress extends React.Component {
           className='AddAddress__form'
           onSubmit={(e) => this.handleFormSubmit(e)}
         >
-          {/* <div className='AddAddress__error' role='alert'>
-            {error && <p>{error.message}</p>}
-          </div> */}
           <div>
             <label htmlFor='street'>
               Street
@@ -257,7 +177,6 @@ export default class AddAddress extends React.Component {
               type='text'
               name='street'
               id='street'
-              aria-require="true"
               aria-label="Street"
               placeholder='123 Lake Ln'
               onChange={this.handleAddressStreet}
@@ -274,7 +193,6 @@ export default class AddAddress extends React.Component {
               type='text'
               name='city'
               id='city'
-              aria-require="true"
               aria-label="city"
               placeholder='Fort Worth'
               onChange={this.handleAddressCity}
@@ -291,7 +209,6 @@ export default class AddAddress extends React.Component {
               type='text'
               name='state'
               id='state'
-              aria-require="true"
               aria-label="state"
               placeholder='LA'
               onChange={this.handleAddressState}
@@ -308,10 +225,7 @@ export default class AddAddress extends React.Component {
               name='zip'
               id='zip'
               defaultValue='N/A'
-              aria-require="true"
               aria-label="zip"
-              // placeholder='12345'
-              // value={zip}
               onChange={this.handleAddressZip}
               required
             />
@@ -326,7 +240,6 @@ export default class AddAddress extends React.Component {
               name='name'
               id='name'
               defaultValue='N/A'
-              // placeholder='Brad Tyler'
               onChange={this.handleAddressName}
             />
           </div>
@@ -340,7 +253,6 @@ export default class AddAddress extends React.Component {
               name='email'
               id='email'
               defaultValue='N/A'
-              // placeholder='BradTyler@google.com'
               onChange={this.handleAddressEmail}
             />
           </div>
@@ -379,7 +291,6 @@ export default class AddAddress extends React.Component {
               name='notes'
               id='notes'
               defaultValue='N/A'
-              // value={notes}
               onChange={this.handleAddressNotes}
             />
            </div>
@@ -392,7 +303,6 @@ export default class AddAddress extends React.Component {
             <button type='submit'>Save</button>
           </div>
         </form>
-        {/* <div>                <h2>{this.props.store.teams.name}</h2></div> */}
       </section>
     );
   }

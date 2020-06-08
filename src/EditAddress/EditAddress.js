@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import { Route, Link } from 'react-router-dom';
 import HometoHomeContext from '../Context/HometoHomeContext'
 import { findAddress } from '../address-helpers.js'
 import config from '../config';
 import PropTypes from 'prop-types'
 
 const Required = () => (
-<span className='AddressSubmit__required'>*</span>
+  <span className='AddressSubmit__required'>*</span>
 )
 
 export default class ListsForGroups extends Component {
@@ -38,7 +37,6 @@ export default class ListsForGroups extends Component {
 
       handleChangeStreet = e => {
         this.setState({ street: e.target.value })
-        console.log('this is street', e.target)
       };
 
       handleChangeCity = e => {
@@ -79,7 +77,6 @@ export default class ListsForGroups extends Component {
         const { addressId } = this.props.match.params
         const { street, city, state, zip, name, email, gospelpresentation, newsalvations, notes } = this.state
         const newAddress = {street, city, state, zip, name, email, gospelpresentation, newsalvations, notes }
-        console.log(newAddress)
         fetch(config.API_ENDPOINT + `/api/addresses/${addressId}`, {
           method: 'PATCH',
           body: JSON.stringify(newAddress),
@@ -93,7 +90,6 @@ export default class ListsForGroups extends Component {
           })
           .then(() => {
             this.context.updateAddress(newAddress)
-            // this.props.history.push('/main/users')
             this.props.history.goBack()
           })
           .catch(error => {
@@ -106,8 +102,7 @@ export default class ListsForGroups extends Component {
         const {addresses=[]}= this.context
         const { addressId} = this.props.match.params
         const address = findAddress (addresses, addressId) || {}
-        const { error, street, city, state, zip, name, email, salvation, notes  } = address
-        // const address = addresses.filter(address=>list.gpId == address.gospelPresentation && list.nsId == address.newSalvations);
+        const { street, city, state, zip, name, email, salvation, notes  } = address
         console.log('AAAAHHHHH!!!!', street)
         return (
             <div className="listsTeams">
@@ -123,12 +118,8 @@ export default class ListsForGroups extends Component {
                 <section>
                     <form
                         className='AddressSubmit__form'
-                        // onSubmit={this.handleSubmit}
                         onSubmit={(e) => this.handleSubmit(e,address)}
                         >
-                        {/* <div className='AddressSubmit__error' role='alert'>
-                            {error && <p>{error.message}</p>}
-                        </div> */}
                         <div>
                             <label htmlFor='street'>
                             Street
@@ -140,7 +131,6 @@ export default class ListsForGroups extends Component {
                             name='street'
                             id='street'
                             required
-                            // value={street}
                             placeholder={street}
                             onChange={this.handleChangeStreet}
                             />
@@ -156,7 +146,6 @@ export default class ListsForGroups extends Component {
                             type='text'
                             name='city'
                             id='city'
-                            // value={city}
                             placeholder={city}
                             required
                             onChange={this.handleChangeCity}
@@ -173,7 +162,6 @@ export default class ListsForGroups extends Component {
                             type='text'
                             name='state'
                             id='state'
-                            // value={state}
                             placeholder={state}
                             required
                             onChange={this.handleChangeState}
@@ -189,7 +177,6 @@ export default class ListsForGroups extends Component {
                             type='number'
                             name='zip'
                             id='zip'
-                            // value={zip}
                             placeholder={zip}
                             onChange={this.handleChangeZip}
                             />
@@ -205,7 +192,6 @@ export default class ListsForGroups extends Component {
                             name='name'
                             id='name'
                             placeholder={name}
-                            // value={name}
                             onChange={this.handleChangeName}
                             />
                         </div>
@@ -219,7 +205,6 @@ export default class ListsForGroups extends Component {
                             name='email'
                             id='email'
                             placeholder={email}
-                            // value={email}
                             onChange={this.handleChangeEmail}
                             />
                         </div>
@@ -259,7 +244,6 @@ export default class ListsForGroups extends Component {
                             <textarea
                             name='notes'
                             id='notes'
-                            // value={notes}
                             placeholder={notes}
                             onChange={this.handleChangeNotes}
                             />

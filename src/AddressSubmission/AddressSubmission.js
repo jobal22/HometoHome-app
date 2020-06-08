@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
-import { Route, Link } from 'react-router-dom';
 import HometoHomeContext from '../Context/HometoHomeContext'
-import { findList, findAddress, getAddressesForList, getTeamsforList } from '../address-helpers.js'
-import Lists from '../Lists/Lists.js'
-import AddressCard from '../AddressCard/AddressCard.js'
+import { findAddress } from '../address-helpers.js'
 import config from '../config';
 import PropTypes from 'prop-types'
 
 const Required = () => (
-<span className='AddressSubmit__required'>*</span>
+  <span className='AddressSubmit__required'>*</span>
 )
 
 export default class ListsForGroups extends Component {
@@ -27,7 +24,7 @@ export default class ListsForGroups extends Component {
       state = {
         error: null,
         id: '',
-        name: '',
+        street: '',
         city: '',
         state: '',
         zip: '',
@@ -47,7 +44,7 @@ export default class ListsForGroups extends Component {
       };
 
       handleChangeGospelPresentation = e => {
-        console.log(e.target.id, 'gospelLabel')
+        // console.log(e.target.id, 'gospelLabel')
         this.setState({ gospelpresentation: e.target.id})
       };
 
@@ -62,9 +59,8 @@ export default class ListsForGroups extends Component {
       handleSubmit = (e, address) => {
         e.preventDefault()
         const { addressId } = this.props.match.params
-        const { street, city, state, zip, name, email, gospelpresentation, newsalvations, notes } = this.state
+        const { name, email, gospelpresentation, newsalvations, notes } = this.state
         const newAddress = { ...address, name, email, gospelpresentation, newsalvations, notes }
-        console.log(newAddress)
         fetch(config.API_ENDPOINT + `/api/addresses/${addressId}`, {
           method: 'PATCH',
           body: JSON.stringify(newAddress),
@@ -78,7 +74,6 @@ export default class ListsForGroups extends Component {
           })
           .then(() => {
             this.context.updateAddress(newAddress)
-            // this.props.history.push('/main/users')
             this.props.history.goBack()
           })
           .catch(error => {
@@ -91,9 +86,7 @@ export default class ListsForGroups extends Component {
         const {addresses=[]}= this.context
         const { addressId} = this.props.match.params
         const address = findAddress (addresses, addressId) || {}
-        const { error, name, email, salvation, notes  } = this.state
-        // const address = addresses.filter(address=>list.gpId == address.gospelPresentation && list.nsId == address.newSalvations);
-        console.log('AAAAHHHHH!!!!', this.props.history)
+        const { salvation, notes  } = this.state
         return (
             <div className="listsTeams">
                 <section>
@@ -102,12 +95,8 @@ export default class ListsForGroups extends Component {
                 <section>
                     <form
                         className='AddressSubmit__form'
-                        // onSubmit={this.handleSubmit}
                         onSubmit={(e) => this.handleSubmit(e,address)}
                         >
-                        {/* <div className='AddressSubmit__error' role='alert'>
-                            {error && <p>{error.message}</p>}
-                        </div> */}
                         <div>
                             <label htmlFor='name'>
                             Name
@@ -120,7 +109,6 @@ export default class ListsForGroups extends Component {
                             id='name'
                             placeholder='Brad Tyler'
                             required
-                            // value={name}
                             onChange={this.handleChangeName}
                             />
                         </div>
@@ -134,7 +122,6 @@ export default class ListsForGroups extends Component {
                             name='email'
                             id='email'
                             placeholder='BradTyler@google.com'
-                            // value={email}
                             onChange={this.handleChangeEmail}
                             />
                         </div>
