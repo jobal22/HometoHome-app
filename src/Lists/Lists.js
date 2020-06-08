@@ -1,9 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import AddressCard from '../AddressCard/AddressCard.js';
+import DeleteAddress from '../DeleteAddress/DeleteAddress.js';
 import './Lists.css';
 
 export default function List(props) {
+  
   console.log('dude check it', props)
   return (
     <section className='List'>
@@ -11,9 +13,10 @@ export default function List(props) {
           <h2>{props.name}</h2>
       </header>
 
+
       <div className='AddCatalog__button'>
         <button type='submit'>
-          <Link to={`/add-address`}>Add Addresses</Link>
+          <Link to={`/admin-add-address`}>Add Addresses</Link>
         </button>
       </div>
 
@@ -37,6 +40,21 @@ export default function List(props) {
                 notes={address.notes}
 
             />
+            // <div>
+            //   <h2>
+            //     <Link to={`/main/address/${address.id}`}><p>{address.street}{' '}{address.city}{' '}{address.state}{' '}{address.zip} </p>
+            //     </Link>
+            //   </h2>
+            //   <button
+            //     className='Note__delete'
+            //     type='button'
+            //     // onClick={this.handleClickDelete}
+            //   >
+            //     {' '}
+            //     remove
+            //   </button>
+
+            // </div>
            )}
            {/* {props.addresses.map((a)=><p>{a.street}</p>)} */}
           {/* <button

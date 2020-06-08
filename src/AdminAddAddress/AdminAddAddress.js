@@ -2,7 +2,6 @@ import React, { Component } from  'react';
 import PropTypes from 'prop-types';
 import HometoHomeContext from '../Context/HometoHomeContext';
 import config from '../config'
-import './AddAddress.css';
 
 const Required = () => (
   <span className='AddAddress__required'>*</span>
@@ -207,8 +206,8 @@ export default class AddAddress extends React.Component {
         })
         .then(() => {
           this.context.handleAddAddress(newAddress)
-          // this.props.history.push('/main/users')
-          this.props.history.goBack()
+          this.props.history.push('/main/admin')
+        //   this.props.history.goBack()
 
         })
         .catch(error => {

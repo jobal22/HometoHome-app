@@ -31,6 +31,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import HometoHomeContext from '../Context/HometoHomeContext'
+import { findAddress } from '../address-helpers.js'
 import './Addresses.css';
 
 export default class Addresses extends Component {
@@ -41,17 +42,18 @@ export default class Addresses extends Component {
   }
 static contextType = HometoHomeContext;
   render() {
-    const {addresses=[], lists=[]} = this.context
-    console.log('herehereher', this.context)
+    const {addresses=[]}= this.context
+    const { addressId} = this.props.match.params
+    const a = findAddress (addresses, addressId) || {}
+console.log('herehereher', a)
     return (
       <div className="totalAddress">
-        <div className='AddCatalog__button'>
-          <button type='submit'>
-            <Link to={`/add-address`}>Add Addresses</Link>
+        <section>
+          <button type='button' onClick={this.props.history.goBack}>
+            Go Back
           </button>
-        </div>
+        </section>
 
-        {addresses.map(a => 
       <p><b>Street: {a.street}</b> <br></br>
       City: {a.city}<br></br>
       State: {a.state}<br></br>
@@ -61,12 +63,11 @@ static contextType = HometoHomeContext;
       Was the Gospel Presented? {a.gospelpresentation}<br></br>
       Were there any new salvations? {a.newsalvations}<br></br>
       Notes: {a.notes}</p>
-      )}
-      {/* <p>name:{props.name} </p>
-      <p>phone:{props.phone}</p>
-      <p>Was the gospel presented? {props.gospelPresentation}</p>
-      <p>Were there any new salvations? {props.newSalvations}</p>
-      <p>note:{props.notes}</p> */}
+      <div className='EditAddress__button'>
+        <button type='submit'>
+          <Link to={`/edit-address/${a.id}`}>Edit Address</Link>
+        </button>
+      </div>
     </div>
     )
   }

@@ -24,29 +24,6 @@ export default class Administration extends Component {
         // const list = findList (lists, listId) || {}
         // const address = this.context.addresses.map(address=>lists.gpId == address.gospelPresentation);
 
-        // const doneL = lists.map(list => list.gpId)
-        // const doneB = Array.from(doneL)
-        // const doneA = addresses.map(address => address.gospelPresentation)
-        // const really = addresses.map(a=>doneA === doneB)
-        // const dan = getNotesForFolder (addresses, doneL) || {}
-        // const moe = lists.map(l => l.addressIds)
-        // const poe = moe.map(id => addresses[id])
-        // const ollie = lists.map(list => (list.addressIds.map(id => addresses[id])))
-        // const elijah = lists.map(list => (list.addressIds))
-        // const nova = lists.map(list => (list.nsId))
-
-        // const gpId = lists.map(l => l.gpId)
-        // const nsId = lists.map(l => l.nsId)
-
-        // const map = lists.map((r, index)=> { console.log(index); return r.gpId + index})
-        // const o = lists.map(id => lists[id])
-
-        // const findList = (lists, lId) => lists.find(r => r.id == lId)
-        // const red = findList (lists, lId) || {}
-        // const zz = addresses.filter(address=> address.gospelPresentation)
-        // const dd = lists.filter(address=>gpId == address.gospelPresentation)
-
-
         console.log('herehereher', this.context)
         return (
             <div>

@@ -3,10 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import HometoHomeContext from '../Context/HometoHomeContext'
 import { findList, findAddress, getAddressesForList, getTeamsforList } from '../address-helpers.js'
 import Lists from '../Lists/Lists.js'
-import Teams from '../Teams/Teams.js'
 import AddressCard from '../AddressCard/AddressCard.js'
-import TeamAssignment from '../TeamAssignment/TeamAssignment'
-import AddTeam from '../AddTeam/AddTeam'
 import EditAddress from '../AddressSubmission/AddressSubmission.js'
 import config from '../config';
 import PropTypes from 'prop-types'
@@ -132,8 +129,23 @@ export default class ListsForUsers extends Component {
             <div className="listsTeams">
               <section>
                 <h3>{list.name}</h3>
+                <section>
+                  <div className='GoBack__button'>
+                    <button type='button' onClick={this.props.history.goBack}>
+                        Go Back
+                    </button>
+                  </div>
+
+                  <div className='AddCatalog__button'>
+                    <button type='submit'>
+                      <Link to={`/add-address`}>Add Addresses</Link>
+                    </button>
+                  </div>
+                </section>
+
+
               </section>
-                <section onSubmit={this.handleSubmit}>
+                <section onSubmit={this.handleSubmit} >
                 {address.map(a =>
                   <Link to={`/main/address-submission/${a.id}`}><h3 name='greg'>{a.street} {a.city} {a.state} {a.zip} {''} </h3><br></br></Link>
                   )}

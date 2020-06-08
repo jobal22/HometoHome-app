@@ -6,4 +6,5 @@ export default React.createContext({
     addList: () => {},
     addAddress: () => {},
     updateAddress: () => {},
+    deleteAddress: () => {},
 })

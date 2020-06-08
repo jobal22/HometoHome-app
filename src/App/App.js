@@ -4,9 +4,12 @@ import STORE from '../Store/dummy-store';
 import HometoHomeContext from '../Context/HometoHomeContext'
 import HomePage from '../HomePage/HomePage.js'
 import Administration from '../Administration/Administration.js'
+import AddressCard from '../AddressCard/AddressCard.js'
+import EditAddress from '../EditAddress/EditAddress.js'
 import Address from '../Address/Address.js'
 import Addresses from '../Addresses/Addresses.js'
 import AddAddress from '../AddAddress/AddAddress.js'
+import AdminAddAddress from '../AdminAddAddress/AdminAddAddress.js'
 import AddressSubmission from '../AddressSubmission/AddressSubmission.js'
 import Users from '../Users/Users.js'
 import ListsForUsers from '../ListsForUsers/ListsForUsers.js'
@@ -41,11 +44,11 @@ export default class App extends Component {
     })
   }
 
-  addAddress = address => {
-    this.setState({
-      addresses: [ ...this.state.addresses, address ],
-    })
-  }
+  // addAddress = address => {
+  //   this.setState({
+  //     addresses: [ ...this.state.addresses, address ],
+  //   })
+  // }
 
   componentDidMount() {
     Promise.all([
@@ -79,18 +82,27 @@ export default class App extends Component {
     })
   }
 
+  handleDeleteAddress = addressId => {
+    this.setState({
+      addresses: this.state.addresses.filter(address => address.id !== addressId),
+    })
+  }
+
+
   renderMainRoutes() {
     return (
       <>
         <Route exact path="/" component={LandingPage}/>
         <Route exact path = "/main" component={HomePage}/>
         <Route path = "/main/admin" component={Administration}/>
-        <Route exact path = "/main/addresses" component={Addresses}/>
+        <Route exact path = "/main/addresses" component={Address}/>
         <Route exact path = "/main/users" component={Users}/>
         <Route path = "/main/users/list/:listId" component={ListsForUsers}/>
-        <Route path = "/main/address/:addressId" component={Address}/>
+        <Route path = "/main/address/:addressId" component={Addresses}/>
         <Route path = "/main/address-submission/:addressId" component={AddressSubmission}/>
         <Route path = "/add-address" component={AddAddress}/>
+        <Route path = "/admin-add-address" component={AdminAddAddress}/>
+        <Route path = "/edit-address/:addressId" component={EditAddress}/>
       </>
     )
   }
@@ -104,7 +116,8 @@ export default class App extends Component {
       newTeam: this.state.newTeam,
       updateNewTeamName: this.updateNewTeamName,
       updateAddress: this.updateAddress,
-
+      handleAddAddress: this.handleAddAddress,
+      deleteAddress: this.handleDeleteAddress,
     }
     return (
       <div className="App">

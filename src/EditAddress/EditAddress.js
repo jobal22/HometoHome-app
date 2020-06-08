@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom';
 import HometoHomeContext from '../Context/HometoHomeContext'
-import { findList, findAddress, getAddressesForList, getTeamsforList } from '../address-helpers.js'
-import Lists from '../Lists/Lists.js'
-import AddressCard from '../AddressCard/AddressCard.js'
+import { findAddress } from '../address-helpers.js'
 import config from '../config';
 import PropTypes from 'prop-types'
 
@@ -27,7 +25,7 @@ export default class ListsForGroups extends Component {
       state = {
         error: null,
         id: '',
-        name: '',
+        street: '',
         city: '',
         state: '',
         zip: '',
@@ -36,6 +34,23 @@ export default class ListsForGroups extends Component {
         gospelpresentation: 'N/A',
         newsalvations: 0,
         notes: 'N/A'
+      };
+
+      handleChangeStreet = e => {
+        this.setState({ street: e.target.value })
+        console.log('this is street', e.target)
+      };
+
+      handleChangeCity = e => {
+        this.setState({ city: e.target.value })
+      };
+
+      handleChangeState = e => {
+        this.setState({ state: e.target.value })
+      };
+
+      handleChangeZip = e => {
+        this.setState({ zip: e.target.value })
       };
 
       handleChangeName = e => {
@@ -63,7 +78,7 @@ export default class ListsForGroups extends Component {
         e.preventDefault()
         const { addressId } = this.props.match.params
         const { street, city, state, zip, name, email, gospelpresentation, newsalvations, notes } = this.state
-        const newAddress = { ...address, name, email, gospelpresentation, newsalvations, notes }
+        const newAddress = {street, city, state, zip, name, email, gospelpresentation, newsalvations, notes }
         console.log(newAddress)
         fetch(config.API_ENDPOINT + `/api/addresses/${addressId}`, {
           method: 'PATCH',
@@ -91,11 +106,17 @@ export default class ListsForGroups extends Component {
         const {addresses=[]}= this.context
         const { addressId} = this.props.match.params
         const address = findAddress (addresses, addressId) || {}
-        const { error, name, email, salvation, notes  } = this.state
+        const { error, street, city, state, zip, name, email, salvation, notes  } = address
         // const address = addresses.filter(address=>list.gpId == address.gospelPresentation && list.nsId == address.newSalvations);
-        console.log('AAAAHHHHH!!!!', this.props.history)
+        console.log('AAAAHHHHH!!!!', street)
         return (
             <div className="listsTeams">
+                <section>
+                    <button type='button' onClick={this.props.history.goBack}>
+                        Go Back
+                    </button>
+                </section>
+
                 <section>
                     <h3>{address.street} {address.city} {address.state} {address.zip}</h3>
                 </section>
@@ -109,17 +130,81 @@ export default class ListsForGroups extends Component {
                             {error && <p>{error.message}</p>}
                         </div> */}
                         <div>
-                            <label htmlFor='name'>
-                            Name
+                            <label htmlFor='street'>
+                            Street
                             {' '}
                             <Required />
                             </label>
                             <input
                             type='text'
+                            name='street'
+                            id='street'
+                            required
+                            // value={street}
+                            placeholder={street}
+                            onChange={this.handleChangeStreet}
+                            />
+                        </div>
+
+                        <div>
+                            <label htmlFor='city'>
+                            City
+                            {' '}
+                            <Required />
+                            </label>
+                            <input
+                            type='text'
+                            name='city'
+                            id='city'
+                            // value={city}
+                            placeholder={city}
+                            required
+                            onChange={this.handleChangeCity}
+                            />
+                        </div>
+
+                        <div>
+                            <label htmlFor='state'>
+                            State
+                            {' '}
+                            <Required />
+                            </label>
+                            <input
+                            type='text'
+                            name='state'
+                            id='state'
+                            // value={state}
+                            placeholder={state}
+                            required
+                            onChange={this.handleChangeState}
+                            />
+                        </div>
+
+                        <div>
+                            <label htmlFor='zip'>
+                            Zip
+                            {' '}
+                            </label>
+                            <input
+                            type='number'
+                            name='zip'
+                            id='zip'
+                            // value={zip}
+                            placeholder={zip}
+                            onChange={this.handleChangeZip}
+                            />
+                        </div>
+
+                        <div>
+                            <label htmlFor='name'>
+                            Name
+                            {' '}
+                            </label>
+                            <input
+                            type='text'
                             name='name'
                             id='name'
-                            placeholder='Brad Tyler'
-                            required
+                            placeholder={name}
                             // value={name}
                             onChange={this.handleChangeName}
                             />
@@ -133,7 +218,7 @@ export default class ListsForGroups extends Component {
                             type='text'
                             name='email'
                             id='email'
-                            placeholder='BradTyler@google.com'
+                            placeholder={email}
                             // value={email}
                             onChange={this.handleChangeEmail}
                             />
@@ -142,10 +227,8 @@ export default class ListsForGroups extends Component {
                             <label htmlFor='gospel'>
                             Was the Gospel presented?
                             {' '}
-                            <Required />
                             </label>
-                            <label>
-                              
+                            <label >
                                 <input type="radio" name="gospel" id="yes" onChange={this.handleChangeGospelPresentation}/> Yes {' '}
                                 <input type="radio" name="gospel" id="no" onChange={this.handleChangeGospelPresentation}/> No
                             </label>
@@ -162,9 +245,10 @@ export default class ListsForGroups extends Component {
                             id='salvation'
                             defaultValue='0'
                             min='0'
-                            max='100'
+                            max='1'
                             required
                             value={salvation}
+                            placeholder={salvation}
                             onChange={this.handleChangeNewSalvations}
                             />
                         </div>
@@ -175,7 +259,8 @@ export default class ListsForGroups extends Component {
                             <textarea
                             name='notes'
                             id='notes'
-                            value={notes}
+                            // value={notes}
+                            placeholder={notes}
                             onChange={this.handleChangeNotes}
                             />
                         </div>
