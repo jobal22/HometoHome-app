@@ -8,8 +8,8 @@
   }
   
   .App__nav {
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding-top: 1px;
+    padding-bottom: 80px;
     /* padding: 1% 0; */
     background-color: #eeede9;
     font-family: 'Shadows Into Light Two', cursive;
@@ -29,9 +29,65 @@
     text-decoration: none;
   }
 
+  /* .logo {
+    width: 90px;
+  } */
+
   .App__footer {
     background-color: #eeede9;
     padding-top: 3px;
-    padding-bottom: 5px;
+    padding-bottom: 1px;
     font-family: 'Shadows Into Light Two', cursive;
+  }
+
+  @media screen and (max-width: 1029px) {
+    .logo {
+      width: 90px;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+      padding-top: 4px;
+    }
+
+    .topnav ul{
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+      margin:0;
+      padding: 10px; /*this took the bullets off*/
+    }
+
+    .topnav a{
+      margin: 0 20px; 
+      padding-top: 25px;
+      text-decoration: none;
+      color: black;
+      font-family: 'Shadows Into Light Two', cursive;
+      letter-spacing: 4px;
+    }
+    /* .hamburger {
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    } */
+
+    .icon {
+      /*text-align: right;
+      padding-right: 13px;
+      color: white;
+      width: 100%;
+      font-size: 40px;*/
+      float: right;
+      display: block;
+      margin-top: 35px;
+      margin-right: 30px;
+    }
+
+    .menu {display: none;}
+
+  
+
+
   }

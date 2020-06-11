@@ -24,7 +24,7 @@ export class LandingPage extends Component {
           </section>
 
           <div className="Landing__link">
-            <Link className='homePage' to='/main'>Come On In!</Link>
+            <Link className='landToHome' to='/main'>Come On In!</Link>
           </div>
         </main>
       </div>

@@ -12,6 +12,8 @@ import Users from '../Users/Users.js'
 import ListsForUsers from '../ListsForUsers/ListsForUsers.js'
 import config from '../config'
 import LandingPage from '../LandingPage/LandingPage.js'
+import logo from '../Img/hometohome-Logo.png'
+import HM from '../HM/HM.js'
 import './App.css'
 
 
@@ -75,7 +77,6 @@ export default class App extends Component {
     })
   }
 
-
   renderMainRoutes() {
     return (
       <>
@@ -107,7 +108,14 @@ export default class App extends Component {
     return (
       <div className="App">
         <nav className="App__nav" >
-          <Link className="navLink" to={"/main"}>Nav</Link>
+          <Link className="navLink" to={"/main"}>
+            <img className='logo' src={logo} alt='Logo'/>
+          </Link>
+          <div className="topnav">
+                <div className="hamburger">
+                    <HM/>
+                </div>
+            </div>
         </nav>
         <main>
           <div>
