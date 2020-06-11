@@ -4,7 +4,6 @@ import AddressCard from '../AddressCard/AddressCard.js';
 import './Lists.css';
 
 export default function List(props) {
-  
   return (
     <section className='List'>
       <header className='List-header'>

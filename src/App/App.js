@@ -107,7 +107,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <nav className="App__nav" >
-          <Link to={"/main"}>Nav</Link>
+          <Link className="navLink" to={"/main"}>Nav</Link>
         </nav>
         <main>
           <div>
@@ -118,6 +118,9 @@ export default class App extends Component {
               </HometoHomeContext.Provider>
           </div>
         </main>
+        <footer className='App__footer'>
+          <p>Share the Gospel with Your Neighbor</p>
+        </footer>
       </div>
     )
   }

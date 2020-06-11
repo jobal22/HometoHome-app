@@ -77,10 +77,12 @@ export default class ListsForUsers extends Component {
         const { listId} = this.props.match.params
         const list = findList (lists, listId) || {}
         const address = addresses.filter(address=>list.gpid == address.gospelpresentation && list.nsid == address.newsalvations);
+        const addressCount = addresses.filter(address=>list.gpid == address.gospelpresentation && list.nsid == address.newsalvations).length;
+        console.log(addressCount)
         return (
             <div className="listsTeams">
               <section>
-                <h3>{list.name}</h3>
+                <h3>{list.name} ({addressCount})</h3>
                 <section>
                   <div className='GoBack__button'>
                     <button type='button' onClick={this.props.history.goBack}>

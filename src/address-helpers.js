@@ -9,3 +9,6 @@ export const getAddressesForList = (addresses=[], addressId) => (
       ? addresses
       : addresses.filter(address => address.gospelpresentation == addressId)
 )
+
+export const countAddressesForList = (addresses=[], gpid, nsid) =>
+  addresses.filter(a => a.gospelpresentation == gpid && a.newsalvations == nsid).length
