@@ -1,0 +1,35 @@
+.addresses {
+    --address-height: 60px;
+    height: var(--address-height);
+    padding: 8px 0 0 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    /* background-color: white; */
+    text-shadow: 1px 1px 28px rgba(5, 5, 5, 0.247);
+}
+
+.addressesLink {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: 17px;
+}
+
+.addressesLink:hover {
+    text-decoration: underline;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+
+
+.addressesDeleteButton {
+    border: 0;
+    color: white;
+    float: right;
+    font-size: 14px;
+    position: relative;
+    font-family: 'Merienda', cursive;
+    background-color: #0e2c3b;
+    border-radius: 7px;
+}

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import HometoHomeContext from '../Context/HometoHomeContext'
 import config from '../config'
 import PropTypes from 'prop-types'
+import './AddressCard.css';
+
 
 export default class AddressCard extends Component {
 
@@ -34,19 +36,21 @@ export default class AddressCard extends Component {
   render() {
     const {id, street, city, state, zip} = this.props
     return (
-      <div className='Card'>
-        <Link to={`/main/address/${id}`}>{street}{' '}{city}{' '}{state}{' '}{zip}</Link>
-        <p>
-          <button
-            className='Note__delete'
-            type='button'
-            onClick={this.handleClickDelete}
-          >
-            remove
-          </button>
-        </p>
+      <div className='AddressCards'>
+        <section className='addresses'>
+          <Link className='addressesLink' to={`/main/address/${id}`}>
+            {street}{' '}{city}{' '}{state}{' '}{zip}{' '}
+            <button
+              className='addressesDeleteButton'
+              type='button'
+              onClick={this.handleClickDelete}
+            >
+              remove
+            </button>
 
-    </div>
+          </Link>
+        </section>
+      </div>
     )
   }
 }

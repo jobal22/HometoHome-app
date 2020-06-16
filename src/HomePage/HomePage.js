@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import HometoHomeContext from '../Context/HometoHomeContext'
 import './HomePage.css'
-import adminLogo from '../Img/admin-Logo.png'
-import usersLogo from '../Img/user-Logo.png'
+import adminLogo from '../Img/admin-Logo-3.png'
+import usersLogo from '../Img/users-Logo-3.png'
 import PropTypes from 'prop-types'
 
 export default class HomePage extends Component {
@@ -23,7 +23,6 @@ export default class HomePage extends Component {
                 <section className='admin'>
                     <Link to={ '/main/admin'}>
                     <img className='adminLogo' src={adminLogo} alt='adminLogo'/>
-                        Administration
                     </Link>
                 </section>
                 <section className='users'>

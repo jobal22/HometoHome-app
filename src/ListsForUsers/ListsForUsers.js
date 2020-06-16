@@ -82,28 +82,35 @@ export default class ListsForUsers extends Component {
         return (
             <div className="listsTeams">
               <section>
-                <h3>{list.name} ({addressCount})</h3>
-                <section>
-                  <div className='GoBack__button'>
-                    <button type='button' onClick={this.props.history.goBack}>
+                <h3 className='listTitle'>{list.name} ({addressCount})</h3>
+              <section>
+                  <div className='gbButton'>
+                    <button type='button' className='GoBack__button' onClick={this.props.history.goBack}>
                         Go Back
                     </button>
                   </div>
+              </section >
+                <section className='addrSec' onSubmit={this.handleSubmit} >
+                  <ol className='addrSecLinkorderList'>
+                    {address.map(a =>
+                    <li className='addrSecLinkList'>
+                      <Link className='addrSecLink' to={`/main/address-submission/${a.id}`}>
+                          <h3 className='addrSecLinkH3'>
+                            {a.street} {a.city} {a.state} {a.zip}
+                          </h3>
+                      </Link>
+                        </li>
 
-                  <div className='AddCatalog__button'>
-                    <button type='submit'>
-                      <Link to={`/add-address`}>Add Addresses</Link>
+                    )}
+                  </ol>
+                </section>
+                <div className='AddAddress__button'>
+                    <button type='submit' className='AddAddresses'>
+                      <Link className='AddAddressesLink' to={`/add-address`}>Add Addresses</Link>
                     </button>
                   </div>
                 </section>
 
-
-              </section>
-                <section onSubmit={this.handleSubmit} >
-                {address.map(a =>
-                  <Link to={`/main/address-submission/${a.id}`}><h3>{a.street} {a.city} {a.state} {a.zip} {''} </h3><br></br></Link>
-                  )}
-                </section>
             </div>
         )
     }

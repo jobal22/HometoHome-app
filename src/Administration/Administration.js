@@ -14,23 +14,23 @@ export default class Administration extends Component {
     render() {
         const {addresses=[], lists=[]} = this.context
         return (
-            <div>
-                <header className="Header">
-                    <h1>Home to Home</h1>
-                </header>
-                {lists.map(list => 
-                    <Lists
-                        key={list.id}
-                        id={list.id}
-                        name={list.name}
-                        gpid={list.gpid}
-                        nsid={list.nsid}
-                        addresses={addresses.filter(address => 
-                            address.gospelpresentation === list.gpid 
-                            && address.newsalvations === list.nsid)}
-                    />
-                    
-                )}
+            <div className="Administration">
+                <div className="adminPage">
+                    {lists.map(list =>
+                    <div className = 'adminList'>
+                        <Lists
+                            key={list.id}
+                            id={list.id}
+                            name={list.name}
+                            gpid={list.gpid}
+                            nsid={list.nsid}
+                            addresses={addresses.filter(address => 
+                                address.gospelpresentation === list.gpid 
+                                && address.newsalvations === list.nsid)}
+                        />
+                    </div >
+                    )}
+                </div>
             </div>
         )
     }

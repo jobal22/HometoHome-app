@@ -90,18 +90,19 @@ export default class ListsForGroups extends Component {
         return (
             <div className="listsTeams">
                 <section>
-                    <h3>{address.street} {address.city} {address.state} {address.zip}</h3>
+                  <h2 className='EditTitle'>Address Form</h2>
+                  <h3>{address.street} {address.city} {address.state} {address.zip}</h3>
                 </section>
                 <section>
                     <form
                         className='AddressSubmit__form'
                         onSubmit={(e) => this.handleSubmit(e,address)}
                         >
-                        <div>
+                        <div className='formInfo'>
                             <label htmlFor='name'>
-                            Name
+                            Name:
                             {' '}
-                            <Required />
+                            <Required/> {' '}
                             </label>
                             <input
                             type='text'
@@ -112,7 +113,7 @@ export default class ListsForGroups extends Component {
                             onChange={this.handleChangeName}
                             />
                         </div>
-                        <div>
+                        <div className='formInfo'>
                             <label htmlFor='email'>
                             Email:
                             {' '}
@@ -125,11 +126,11 @@ export default class ListsForGroups extends Component {
                             onChange={this.handleChangeEmail}
                             />
                         </div>
-                        <div>
+                        <div className='formInfo'>
                             <label htmlFor='gospel'>
                             Was the Gospel presented?
                             {' '}
-                            <Required />
+                            <Required/> {' '}
                             </label>
                             <label>
                               
@@ -137,11 +138,11 @@ export default class ListsForGroups extends Component {
                                 <input type="radio" name="gospel" id="no" onChange={this.handleChangeGospelPresentation}/> No
                             </label>
                         </div>
-                        <div>
+                        <div className='formInfo'>
                             <label htmlFor='salvation'>
                             Were there new professions of faith?
                             {' '}
-                            <Required />
+                            <Required/> {' '}
                             </label>
                             <input
                             type='number'
@@ -149,16 +150,16 @@ export default class ListsForGroups extends Component {
                             id='salvation'
                             defaultValue='0'
                             min='0'
-                            max='100'
+                            max='1'
                             required
                             value={salvation}
                             onChange={this.handleChangeNewSalvations}
                             />
                         </div>
-                        <div>
+                        <div className='formInfo'>
                             <label htmlFor='notes'>
-                            Notes
-                            </label>
+                            Notes:
+                            </label> {''}
                             <textarea
                             name='notes'
                             id='notes'
@@ -167,11 +168,11 @@ export default class ListsForGroups extends Component {
                             />
                         </div>
                         <div className='AddressSubmit__buttons'>
-                            <button type='button' onClick={this.props.history.goBack}>
+                            <button type='button' className='AddressSubmit' onClick={this.props.history.goBack}>
                             Cancel
                             </button>
                             {' '}
-                            <button type='submit'>
+                            <button type='submit' className='AddressSubmit'>
                             Submit
                             </button>
                         </div>

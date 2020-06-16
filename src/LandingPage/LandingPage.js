@@ -12,8 +12,8 @@ export class LandingPage extends Component {
     return (
       <div className="Landing">
         <main>
-          <header className="Header">
-            <h1>Home to Home</h1>
+          <header className="lp-header">
+            <h1>Welcome!</h1>
           </header>
 
           <section className="lpInfo">

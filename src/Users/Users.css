@@ -1,26 +1,44 @@
+.Users {
+  padding-top: 100px;
+  padding-bottom: 50px;
+
+}
+
 .Users__list {
     list-style-type: none;
-    margin: 130px 0 0;
-    padding: 0;
+    /* text-align: left; */
+    min-height: 200px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 30px;
+    border-radius: 10px;
+    /* box-shadow: 2px 2px rgba(172, 172, 172, 0.137);
+    border: 4px solid #eeede9; */
+    font-family: 'Baloo Chettan 2', cursive;
+    margin-bottom: 50px;
+    background-color: #A4B1cA;
+  
   }
   
-.Users_list-link {
-    /* display: block; */
+.UsersListLink {
+    font-size: 20px;
     margin: 0 0 8px auto;
-    max-width: 180px;
     padding: 8px 16px;
     text-decoration: none;
+    display: inline-block;  
+    text-decoration: underline;
+    color: black;
+    text-align: center;
+
   }
-  /* .Users_list-link:hover {
-    color: #FFB72F;
+  .UsersListLink:hover {
+    color: white;
     cursor: pointer;
   }
-  .Users_list-linkk.active {
-    background-color: #102541;
-  } */
   
-  .Users__num-notes {
+  .UserAddressNumbers {
     display: block;
     float: right;
-    font-size: 10px;
+    font-size: 15px;
   }

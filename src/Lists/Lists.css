@@ -1,0 +1,53 @@
+.list {
+    text-align: left;
+    min-height: 200px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 30px;
+    border-radius: 10px;
+    /* box-shadow: 2px 2px rgba(172, 172, 172, 0.137); */
+    /* border: 4px solid #eeede9; */
+    font-family: 'Baloo Chettan 2', cursive;
+    margin-bottom: 50px;
+    /* background-color: white; */
+    
+}
+
+div:nth-of-type(1) .list {background-color: #eef6fb; box-shadow: .5px .5px 2px 2px #eeede9;}
+div:nth-of-type(2) .list {background-color: #DDE6ED;}
+div:nth-of-type(3) .list {background-color: #A4B1cA;}
+div:nth-of-type(4) .list {background-color: #8D98A1;}
+
+.list-header {
+    text-align: center;
+    text-decoration: underline;
+    color: black;
+}
+
+.addAddresses__button {
+    text-align: center;
+    margin-bottom: 30px;
+    /* background-color: white; */
+
+}
+
+.addAddresses {
+    background-color: #0e2c3b;
+    color: white;
+    /* font-family: 'Didto', serif; */
+    /* font-family: 'Architects Daughter', cursive; */
+    /* font-family: 'Merienda', cursive; */
+    padding: 5px;
+    border-radius: 7px;
+    border:none;
+}
+
+.addAddressesLink {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+
+}

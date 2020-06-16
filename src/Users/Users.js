@@ -18,13 +18,13 @@ export default class Users extends Component {
         return (
             <div className="Users">
                 <header className="Header">
-                    <h1>Home to Home</h1>
+                    <h1>Teams</h1>
                 </header>
                 <ul className="Users__list">
                 {lists.map(list => 
                     <li key={list.id}>
-                        <Link className='Users_list-link' key={list.id} to={`/main/users/list/${list.id}`}>
-                            <span className='Users__num-addresses'>
+                        <Link className='UsersListLink' key={list.id} to={`/main/users/list/${list.id}`}>
+                            <span className='UserAddressNumbers'>
                                 {countAddressesForList(addresses, list.gpid, list.nsid)}
                             </span>
 

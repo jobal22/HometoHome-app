@@ -12,7 +12,7 @@ import Users from '../Users/Users.js'
 import ListsForUsers from '../ListsForUsers/ListsForUsers.js'
 import config from '../config'
 import LandingPage from '../LandingPage/LandingPage.js'
-import logo from '../Img/hometohome-Logo.png'
+import logo from '../Img/hometohome-Logo-3.png'
 import HM from '../HM/HM.js'
 import './App.css'
 
@@ -109,7 +109,9 @@ export default class App extends Component {
       <div className="App">
         <nav className="App__nav" >
           <Link className="navLink" to={"/main"}>
-            <img className='logo' src={logo} alt='Logo'/>
+            <img className='logo img' src={logo} alt='Logo'/>
+            {/* <h2 className='logo'>to</h2>
+            <img className='logo img' src={logo} alt='Logo'/> */}
           </Link>
           <div className="topnav">
                 <div className="hamburger">
@@ -117,7 +119,7 @@ export default class App extends Component {
                 </div>
             </div>
         </nav>
-        <main>
+        <main className='main'>
           <div>
               <HometoHomeContext.Provider value={contextValue}>
               <div className="App__link">
@@ -126,9 +128,11 @@ export default class App extends Component {
               </HometoHomeContext.Provider>
           </div>
         </main>
-        <footer className='App__footer'>
-          <p>Share the Gospel with Your Neighbor</p>
-        </footer>
+        <div className='footer'>
+          <footer className='App__footer'>
+            <p>Share the Gospel with Your Neighbors</p>
+          </footer>
+        </div>
       </div>
     )
   }

@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import HometoHomeContext from '../Context/HometoHomeContext'
 import { findAddress } from '../address-helpers.js'
-import config from '../config';
+import config from '../config'
 import PropTypes from 'prop-types'
+import './EditAddress.css'
+
 
 const Required = () => (
   <span className='AddressSubmit__required'>*</span>
@@ -105,26 +107,27 @@ export default class ListsForGroups extends Component {
         const { street, city, state, zip, name, email, salvation, notes  } = address
         console.log('AAAAHHHHH!!!!', street)
         return (
-            <div className="listsTeams">
+            <div className="EditAddress">
                 <section>
-                    <button type='button' onClick={this.props.history.goBack}>
+                    <button type='button' className='goBack' onClick={this.props.history.goBack}>
                         Go Back
                     </button>
                 </section>
 
                 <section>
-                    <h3>{address.street} {address.city} {address.state} {address.zip}</h3>
+                  <h2 className='EditTitle'>Edit Address</h2>
+                  <h3 className='EditAddressHeader'>{address.street} {address.city} {address.state} {address.zip}</h3>
                 </section>
                 <section>
                     <form
-                        className='AddressSubmit__form'
+                        className='EditAddress__form'
                         onSubmit={(e) => this.handleSubmit(e,address)}
                         >
-                        <div>
+                        <div className='formInfo'>
                             <label htmlFor='street'>
-                            Street
+                            Street:
                             {' '}
-                            <Required />
+                            <Required /> {''}
                             </label>
                             <input
                             type='text'
@@ -136,11 +139,11 @@ export default class ListsForGroups extends Component {
                             />
                         </div>
 
-                        <div>
+                        <div className='formInfo'>
                             <label htmlFor='city'>
-                            City
+                            City:
                             {' '}
-                            <Required />
+                            <Required /> {''}
                             </label>
                             <input
                             type='text'
@@ -152,11 +155,11 @@ export default class ListsForGroups extends Component {
                             />
                         </div>
 
-                        <div>
+                        <div className='formInfo'>
                             <label htmlFor='state'>
-                            State
+                            State:
                             {' '}
-                            <Required />
+                            <Required /> {''}
                             </label>
                             <input
                             type='text'
@@ -168,9 +171,9 @@ export default class ListsForGroups extends Component {
                             />
                         </div>
 
-                        <div>
+                        <div className='formInfo'>
                             <label htmlFor='zip'>
-                            Zip
+                            Zip:
                             {' '}
                             </label>
                             <input
@@ -182,9 +185,9 @@ export default class ListsForGroups extends Component {
                             />
                         </div>
 
-                        <div>
+                        <div className='formInfo'>
                             <label htmlFor='name'>
-                            Name
+                            Name:
                             {' '}
                             </label>
                             <input
@@ -195,7 +198,8 @@ export default class ListsForGroups extends Component {
                             onChange={this.handleChangeName}
                             />
                         </div>
-                        <div>
+
+                        <div className='formInfo'>
                             <label htmlFor='email'>
                             Email:
                             {' '}
@@ -208,7 +212,8 @@ export default class ListsForGroups extends Component {
                             onChange={this.handleChangeEmail}
                             />
                         </div>
-                        <div>
+
+                        <div className='formInfo'>
                             <label htmlFor='gospel'>
                             Was the Gospel presented?
                             {' '}
@@ -218,11 +223,12 @@ export default class ListsForGroups extends Component {
                                 <input type="radio" name="gospel" id="no" onChange={this.handleChangeGospelPresentation}/> No
                             </label>
                         </div>
-                        <div>
+
+                        <div className='formInfo'>
                             <label htmlFor='salvation'>
                             Were there new professions of faith?
                             {' '}
-                            <Required />
+                            <Required /> {''}
                             </label>
                             <input
                             type='number'
@@ -237,23 +243,27 @@ export default class ListsForGroups extends Component {
                             onChange={this.handleChangeNewSalvations}
                             />
                         </div>
-                        <div>
+
+                        <div className='formInfo'>
                             <label htmlFor='notes'>
-                            Notes
+                            Notes:
+                            {' '}
                             </label>
                             <textarea
                             name='notes'
                             id='notes'
+                            className='notes'
                             placeholder={notes}
                             onChange={this.handleChangeNotes}
                             />
                         </div>
+
                         <div className='AddressSubmit__buttons'>
-                            <button type='button' onClick={this.props.history.goBack}>
+                            <button type='button' className='AddressSubmit' onClick={this.props.history.goBack}>
                             Cancel
                             </button>
                             {' '}
-                            <button type='submit'>
+                            <button type='submit' className='AddressSubmit'>
                             Submit
                             </button>
                         </div>

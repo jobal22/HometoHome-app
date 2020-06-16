@@ -5,15 +5,16 @@ import './Lists.css';
 
 export default function List(props) {
   return (
-    <section className='List'>
-      <header className='List-header'>
+    <div>
+    <section className='list'>
+      <header className='list-header'>
           <h2>{props.name}</h2>
       </header>
 
 
-      <div className='AddCatalog__button'>
-        <button type='submit'>
-          <Link to={`/admin-add-address`}>Add Addresses</Link>
+      <div className='addAddresses__button'>
+        <button className='addAddresses' type='submit'>
+          <Link  className='addAddressesLink' to={`/admin-add-address`}>Add Addresses</Link>
         </button>
       </div>
 
@@ -35,7 +36,7 @@ export default function List(props) {
             />
            )}
       </div>
-    </section>
+    </section></div>
   );
 }
 

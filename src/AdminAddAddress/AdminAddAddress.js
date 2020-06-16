@@ -2,6 +2,8 @@ import React from  'react';
 import PropTypes from 'prop-types';
 import HometoHomeContext from '../Context/HometoHomeContext';
 import config from '../config'
+import './AdminAddAddress.css';
+
 
 const Required = () => (
   <span className='AddAddress__required'>*</span>
@@ -158,19 +160,19 @@ export default class AddAddress extends React.Component {
   };
 
   render() {
-    const { salvation } = this.state
+    const { salvation, yes, no } = this.state
     return (
       <section className='AddAddress'>
-        <h2>Add Address</h2>
+        <h2 className='AddAddressHeader'>Add Address</h2>
         <form
           className='AddAddress__form'
           onSubmit={(e) => this.handleFormSubmit(e)}
         >
-          <div>
+          <div className='formInfo'>
             <label htmlFor='street'>
-              Street
+              Street:
               {' '}
-              <Required />
+              <Required /> {' '}
             </label>
             <input
               type='text'
@@ -182,11 +184,11 @@ export default class AddAddress extends React.Component {
               required
             />
           </div>
-          <div>
+          <div className='formInfo'>
             <label htmlFor='city'>
-              City
+              City:
               {' '}
-              <Required />
+              <Required /> {' '}
             </label>
             <input
               type='text'
@@ -198,11 +200,11 @@ export default class AddAddress extends React.Component {
               required
             />
           </div>
-          <div>
+          <div className='formInfo'>
             <label htmlFor='state'>
-              State
+              State:
               {' '}
-              <Required />
+              <Required /> {' '}
             </label>
             <input
               type='text'
@@ -214,9 +216,9 @@ export default class AddAddress extends React.Component {
               required
             />
           </div>
-          <div>
+          <div className='formInfo'>
             <label htmlFor='zip'>
-              Zip
+              Zip:
               {' '}
             </label>
             <input
@@ -229,9 +231,9 @@ export default class AddAddress extends React.Component {
               required
             />
           </div>
-          <div>
+          <div className='formInfo'>
             <label htmlFor='name'>
-              Name
+              Name:
               {' '}
             </label>
             <input
@@ -242,7 +244,7 @@ export default class AddAddress extends React.Component {
               onChange={this.handleAddressName}
             />
           </div>
-          <div>
+          <div className='formInfo'>
             <label htmlFor='email'>
               Email:
               {' '}
@@ -255,7 +257,7 @@ export default class AddAddress extends React.Component {
               onChange={this.handleAddressEmail}
             />
           </div>
-          <div>
+          <div className='formInfo'>
             <label htmlFor='gospel'>
               Was the Gospel presented?
               {' '}
@@ -265,7 +267,7 @@ export default class AddAddress extends React.Component {
               <input type="radio" name="gospel" id="no" onChange={this.handleAddressGospelPresentation}/> No
             </label>
           </div>
-          <div>
+          <div className='formInfo'>
             <label htmlFor='salvation'>
               Were there new professions of faith?
               {' '}
@@ -276,15 +278,15 @@ export default class AddAddress extends React.Component {
               id='salvation'
               defaultValue='0'
               min='0'
-              max='100'
+              max='1'
               required
               value={salvation}
               onChange={this.handleAddressNewSalvations}
             />
           </div>
-          <div>
+          <div className='formInfo'>
             <label htmlFor='notes'>
-              Notes
+              Notes: {''}
             </label>
             <textarea
               name='notes'

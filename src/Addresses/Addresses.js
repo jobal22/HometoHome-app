@@ -18,26 +18,32 @@ static contextType = HometoHomeContext;
     return (
       <div className="totalAddress">
         <section>
-          <button type='button' onClick={this.props.history.goBack}>
+          <button type='button' className='goBack' onClick={this.props.history.goBack}>
             Go Back
           </button>
         </section>
 
-      <p><b>Street: {a.street}</b> <br></br>
-      City: {a.city}<br></br>
-      State: {a.state}<br></br>
-      Zip: {a.zip}<br></br>
-      Name: {a.name}<br></br>
-      Phone: {a.phone}<br></br>
-      Was the Gospel Presented? {a.gospelpresentation}<br></br>
-      Were there any new salvations? {a.newsalvations}<br></br>
-      Notes: {a.notes}</p>
-      <div className='EditAddress__button'>
-        <button type='submit'>
-          <Link to={`/edit-address/${a.id}`}>Edit Address</Link>
-        </button>
+        <div className='AddressInfoTitle'>
+          <h2>Address Information</h2>
+        </div>
+        <div>
+          <h3 className='addressSt'><b>Street: {a.street}</b></h3>
+          <p className='addressP'>
+            City: {a.city}<br></br>
+            State: {a.state}<br></br>
+            Zip: {a.zip}<br></br>
+            Name: {a.name}<br></br>
+            Phone: {a.phone}<br></br>
+            Was the Gospel Presented? {a.gospelpresentation}<br></br>
+            Were there any new salvations? {a.newsalvations}<br></br>
+            Notes: {a.notes}</p>
+        </div>
+        <div className='editAddress__button'>
+          <button type='submit'className='editAddress'>
+            <Link className='editAddressLink' to={`/edit-address/${a.id}`}>Edit Address</Link>
+          </button>
+        </div>
       </div>
-    </div>
     )
   }
 }
