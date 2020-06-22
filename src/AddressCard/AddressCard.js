@@ -38,8 +38,12 @@ export default class AddressCard extends Component {
     return (
       <div className='AddressCards'>
         <section className='addresses'>
-          <Link className='addressesLink' to={`/main/address/${id}`}>
-            {street}{' '}{city}{' '}{state}{' '}{zip}{' '}
+          <div className='ADL'>
+            <Link className='addressesLink' to={`/main/address/${id}`}>
+              <p className='addressContent' >{street}{' '}{city}{' '}{state}{' '}{zip}{' '}</p>
+            </Link>
+          </div>
+          <div className='ADB'>
             <button
               className='addressesDeleteButton'
               type='button'
@@ -47,8 +51,8 @@ export default class AddressCard extends Component {
             >
               remove
             </button>
+            </div>
 
-          </Link>
         </section>
       </div>
     )

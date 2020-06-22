@@ -7,21 +7,16 @@
     line-height: 1.5;
     position: relative;
     height: 100%;
-    min-height: 100vh;
-    overflow: hidden;
-    /* padding-bottom: 100px; */
+    min-height: 70vh;
+    /* overflow: hidden; */
+    padding-bottom: 80px;
   }
   
   .App__nav {
     padding-top: 1px;
     padding-bottom: 80px;
-    /* padding: 1% 0; */
     background-color: #eeede9;
     font-family: 'Shadows Into Light Two', cursive;
-
-  }
-  
-  .App__nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -29,91 +24,61 @@
     z-index: 10;
   }
 
-  .navLink {
-    color: black;
-    text-decoration: none;
-  }
-
-  /* .logo {
-    width: 90px;
-  } */
-
-  /* .main {
-    padding-bottom: 60px;
-  } */
-
 
   .App__footer {
-    position: relative;
+    position: absolute;
     width: 100%;
-    left: 0;
     bottom: 0;
-    right: 0;
     background-color: #eeede9;
     padding-top: 3px;
     padding-bottom: 1px;
+    font-size: 20px;
     font-family: 'Shadows Into Light Two', cursive;
   }
+
+  .logo {
+    width: 250px;
+    position: absolute; 
+    left: 50%;
+    transform: translate(-50%);
+    padding-top: 6px;
+    display: inline-block; 
+    text-align: center;
+  }
+
+  @media screen and (min-width: 1230px) {
+    .App__nav {
+      padding-top: 1px;
+      padding-bottom: 110px;
+      background-color: #eeede9;
+      font-family: 'Shadows Into Light Two', cursive;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
   
-  @media screen and (max-width: 1029px) {
     .logo {
-      width: 250px;
+      width: 350px;
       position: absolute; 
       left: 50%;
       transform: translate(-50%);
       padding-top: 6px;
       display: inline-block; 
       text-align: center;
-      /* margin: auto; */
-      /* position: relative;
-      font-family: 'Merienda', cursive;
-      font-weight: lighter;  */
     }
 
-    /* .navLink > img {
-      padding-top: 20px;
-    } */
-
-
-    /* .topnav ul{
-      display: flex;
-      justify-content: space-around;
-      list-style: none;
-      margin:0;
-      padding: 10px; 
-    }
-
-    .topnav a{
-      margin: 0 20px; 
-      padding-top: 25px;
-      text-decoration: none;
-      color: black;
-      font-family: 'Shadows Into Light Two', cursive;
-      letter-spacing: 4px;
-    } */
-    /* .hamburger {
-      height: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-    } */
-
-    .icon {
-      /*text-align: right;
-      padding-right: 13px;
-      color: white;
+    .App__footer {
+      position: absolute;
       width: 100%;
-      font-size: 40px;*/
-      float: right;
-      display: block;
-      margin-top: 35px;
-      margin-right: 30px;
+      bottom: 0;
+      background-color: #eeede9;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      font-size: 30px;
+      font-family: 'Shadows Into Light Two', cursive;
     }
-
-    .menu {display: none;}
 
   
-
-
   }

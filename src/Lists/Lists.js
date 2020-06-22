@@ -5,7 +5,7 @@ import './Lists.css';
 
 export default function List(props) {
   return (
-    <div>
+    <div className='listContainer'>
     <section className='list'>
       <header className='list-header'>
           <h2>{props.name}</h2>

@@ -20,6 +20,7 @@ export default class HomePage extends Component {
                 <header className="Header">
                     <h1>Home to Home</h1>
                 </header>
+                <div className='adminUser'>
                 <section className='admin'>
                     <Link to={ '/main/admin'}>
                     <img className='adminLogo' src={adminLogo} alt='adminLogo'/>
@@ -30,6 +31,7 @@ export default class HomePage extends Component {
                     <img className='usersLogo' src={usersLogo} alt='usersLogo'/>
                     </Link>
                 </section>
+                </div>
             </div>
         )
     }

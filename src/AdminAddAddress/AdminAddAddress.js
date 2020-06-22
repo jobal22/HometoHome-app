@@ -2,7 +2,7 @@ import React from  'react';
 import PropTypes from 'prop-types';
 import HometoHomeContext from '../Context/HometoHomeContext';
 import config from '../config'
-import './AdminAddAddress.css';
+import '../AddAddress/AddAddress.css';
 
 
 const Required = () => (

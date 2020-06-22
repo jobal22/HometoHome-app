@@ -1,5 +1,6 @@
   .Landing {
     background-color:  white;
+    margin-bottom: 50px;
   }
   
   .lp-header {
@@ -26,7 +27,7 @@
 
   .Landing__link {
       min-height: 70px;
-      padding: 6% 0;
+      padding: 40px 0;
       background-color: white;
       text-decoration: none;
   }
@@ -42,4 +43,40 @@
     text-decoration: none;
     padding: 5px;
     border-radius: 7px;
+  }
+
+  @media screen and (min-width: 1230px) {
+    .Landing {
+      margin-bottom: 10px;
+    }
+  
+    
+    .lpInfo {
+      max-width: 700px;
+    }
+
+    .Landing__link {
+      padding: 75px;
+    }
+
+    .Landing__link {
+      padding: 50px 0;
+      background-color: white;
+      text-decoration: none;
+  }
+  
+  .landToHome {
+    background-color: #bfb391;
+    color: white;
+    /* font-family: 'Didto', serif; */
+    /* font-family: 'Architects Daughter', cursive; */
+    /* font-family: 'Merienda', cursive; */
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 7px;
+  }
+
+  
   }

@@ -3,12 +3,13 @@ import HometoHomeContext from '../Context/HometoHomeContext'
 import { findAddress } from '../address-helpers.js'
 import config from '../config';
 import PropTypes from 'prop-types'
+import './AddressSubmission.css'
 
 const Required = () => (
   <span className='AddressSubmit__required'>*</span>
 )
 
-export default class ListsForGroups extends Component {
+export default class AddressSubmission extends Component {
 
       static propTypes = {
         match: PropTypes.shape({
@@ -88,23 +89,24 @@ export default class ListsForGroups extends Component {
         const address = findAddress (addresses, addressId) || {}
         const { salvation, notes  } = this.state
         return (
-            <div className="listsTeams">
+            <div className="SubmissionAddress">
                 <section>
-                  <h2 className='EditTitle'>Address Form</h2>
-                  <h3>{address.street} {address.city} {address.state} {address.zip}</h3>
+                  <h2 className='SubmissionTitle'>Address Form</h2>
+                  <h3 className='SubmissionAddressHeader'>{address.street} {address.city} {address.state} {address.zip}</h3>
                 </section>
                 <section>
                     <form
-                        className='AddressSubmit__form'
+                        className='submissionAddress__form'
                         onSubmit={(e) => this.handleSubmit(e,address)}
                         >
-                        <div className='formInfo'>
+                        <div className='submissionFormInfo'>
                             <label htmlFor='name'>
                             Name:
                             {' '}
                             <Required/> {' '}
                             </label>
                             <input
+                            className='textInfo'
                             type='text'
                             name='name'
                             id='name'
@@ -113,12 +115,13 @@ export default class ListsForGroups extends Component {
                             onChange={this.handleChangeName}
                             />
                         </div>
-                        <div className='formInfo'>
+                        <div className='submissionFormInfo'>
                             <label htmlFor='email'>
                             Email:
                             {' '}
                             </label>
                             <input
+                            className='emailInfo'
                             type='text'
                             name='email'
                             id='email'
@@ -126,7 +129,7 @@ export default class ListsForGroups extends Component {
                             onChange={this.handleChangeEmail}
                             />
                         </div>
-                        <div className='formInfo'>
+                        <div className='submissionFormInfo'>
                             <label htmlFor='gospel'>
                             Was the Gospel presented?
                             {' '}
@@ -138,7 +141,7 @@ export default class ListsForGroups extends Component {
                                 <input type="radio" name="gospel" id="no" onChange={this.handleChangeGospelPresentation}/> No
                             </label>
                         </div>
-                        <div className='formInfo'>
+                        <div className='submissionFormInfo'>
                             <label htmlFor='salvation'>
                             Were there new professions of faith?
                             {' '}
@@ -156,11 +159,12 @@ export default class ListsForGroups extends Component {
                             onChange={this.handleChangeNewSalvations}
                             />
                         </div>
-                        <div className='formInfo'>
+                        <div className='submissionFormInfo'>
                             <label htmlFor='notes'>
                             Notes:
                             </label> {''}
                             <textarea
+                            className='notesInfo'
                             name='notes'
                             id='notes'
                             value={notes}

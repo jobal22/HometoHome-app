@@ -105,7 +105,6 @@ export default class ListsForGroups extends Component {
         const { addressId} = this.props.match.params
         const address = findAddress (addresses, addressId) || {}
         const { street, city, state, zip, name, email, salvation, notes  } = address
-        console.log('AAAAHHHHH!!!!', street)
         return (
             <div className="EditAddress">
                 <section>

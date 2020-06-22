@@ -1,12 +1,26 @@
+
+.AddressCards {
+    display: flex;
+    justify-content: center;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+
+}
+
 .addresses {
-    --address-height: 60px;
-    height: var(--address-height);
     padding: 8px 0 0 0;
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    /* background-color: white; */
     text-shadow: 1px 1px 28px rgba(5, 5, 5, 0.247);
+    /* position: relative; */
+    /* display: inline-block; */
+    display: flex;
+}
+
+.ADL {
+    width: 280px;
+
 }
 
 .addressesLink {
@@ -22,14 +36,69 @@
     cursor: pointer;
   }
 
+.addressContent {
+    /* margin-right: 40px; */
+    width: 280px;
+    text-align: left;    
+}
+
+.ADB{
+    padding-top: 17px;
+    padding-left: 30px;
+}
+
 
 .addressesDeleteButton {
     border: 0;
     color: white;
-    float: right;
     font-size: 14px;
-    position: relative;
+    position: static;
+    display: inline-block;
     font-family: 'Merienda', cursive;
     background-color: #0e2c3b;
     border-radius: 7px;
+    left: 80%;
 }
+
+
+.addressesDeleteButton:hover {
+    cursor: pointer;
+  }
+
+@media screen and (min-width: 1230px) {
+    
+    .addresses{
+        border: 2px solid #0e2c3b;
+        border-radius: 7px;
+        margin-bottom: 10px;
+    }
+    
+    .addressesLink {
+        font-size: 22px;
+
+    }
+    
+    
+    .addressContent {
+        margin-right: 40px;
+        width: 250px;
+        text-align: center;  
+
+    }
+    
+    .ADB{
+        padding-top: 26px;
+        margin-right: 20px;
+    }
+    
+    
+    .addressesDeleteButton {
+        font-size: 16px;
+    }
+}
+    
+
+
+
+    
+

@@ -110,8 +110,6 @@ export default class App extends Component {
         <nav className="App__nav" >
           <Link className="navLink" to={"/main"}>
             <img className='logo img' src={logo} alt='Logo'/>
-            {/* <h2 className='logo'>to</h2>
-            <img className='logo img' src={logo} alt='Logo'/> */}
           </Link>
           <div className="topnav">
                 <div className="hamburger">
@@ -130,7 +128,7 @@ export default class App extends Component {
         </main>
         <div className='footer'>
           <footer className='App__footer'>
-            <p>Share the Gospel with Your Neighbors</p>
+            <p className='footerText'>Share the Gospel with Your Neighbors</p>
           </footer>
         </div>
       </div>

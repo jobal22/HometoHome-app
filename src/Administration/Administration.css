@@ -1,3 +1,24 @@
+.Administration {
+  /* margin-bottom: 50px; */
+}
+
 .adminPage {
-    padding-top: 100px;
+    padding-top: 150px;
+    /* padding-bottom: 100px; */
+  }
+
+  @media screen and (min-width: 1230px) {
+    .adminPage {
+      padding-top: 170px;
+      padding-bottom: 120px;
+      display: flex;
+      width: fit-content;
+      margin: auto;
+    }
+  
+    .adminList{
+      margin-left: 10px;
+      margin-right: 10px;
+      position: relative;
+    }
   }

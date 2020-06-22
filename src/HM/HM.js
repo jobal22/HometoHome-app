@@ -16,7 +16,7 @@ function HM() {
       <>
         <div className="NavBar"ref={node}>
           <FocusLock disabled={!open}>
-            <HamburgerMenu open={open} setOpen={setOpen} aria-controls={menuId} />
+            <HamburgerMenu className='menu' open={open} setOpen={setOpen} aria-controls={menuId} />
             <Menu open={open} setOpen={setOpen} id={menuId} />
           </FocusLock>
         </div>        
