@@ -6,7 +6,7 @@ export const StyledMenu = styled.nav`
   justify-content: center;
   background: #0e2c3b;
   transform: ${({ open }) => open ? 'translateX(-100)' : 'translateX(-100%)'};
-  height: 60vh;
+  height: 570px;
   text-align: left;
   padding-top: 35px;
   padding-bottom: 5px;
@@ -71,4 +71,8 @@ export const StyledMenu = styled.nav`
 //   .dropdown-content a:hover {background-color: #f1f1f1;}
 .dropdown:hover .dropdown-content {display: block;}
 // .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+@media screen and (min-width: 1230px) {
+    margin-bottom: 250px;
+}
 `;

@@ -58,8 +58,4 @@ export const StyledBurger = styled.button`
       transform: ${({ open }) => open ? 'rotate(-90deg)' : 'rotate(0)'};
     }
   }
-  @media screen and (min-width: 1230px) {
-    display: none;
-  }
-
 `;
