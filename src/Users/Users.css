@@ -41,6 +41,13 @@
     font-size: 15px;
   }
 
+@media screen and (max-width: 425px) {
+  .Users__list {
+    max-width: 330px;
+  }
+}
+
+
 @media screen and (min-width: 1230px) {
   .Users {
     padding-bottom: 150px;

@@ -53,3 +53,9 @@
     margin-left: 20px;
     margin-right: 10px;
 }
+
+@media screen and (max-width: 425px) {
+    .EditAddress {
+        max-width: 400px;
+    }
+}

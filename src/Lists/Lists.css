@@ -42,6 +42,13 @@ div:nth-of-type(4) .list {background-color: #8D98A1;}
     color: white;
 }
 
+@media screen and (max-width: 425px) {
+    .list {
+      max-width: 325px;
+    }
+  }
+
+
 @media screen and (min-width: 1230px) {
     .list {
         width: 370px;

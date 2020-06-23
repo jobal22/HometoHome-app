@@ -3,7 +3,7 @@
     margin-bottom: 150px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 450px;
+    max-width: 350px;
     border-radius: 10px;
     border: 4px solid #eeede9;
     padding-top: 60px;
@@ -33,53 +33,23 @@
 
 
 .textInfo{
-    width: 250px;
+    width: 238px;
 }
 
 .emailInfo{
-    width: 248px;
+    width: 238px;
     margin-left: 15px;
 }
 
 .notesInfo{
-    width: 250px;
+    width: 238px;
     margin-left: 15px;
 }
 
 @media screen and (min-width: 1230px) {
     .SubmissionAddress {
-        margin-top: 190px;
-        margin-bottom: 150px;
-        margin-left: auto;
-        margin-right: auto;
         max-width: 450px;
-        border-radius: 10px;
-        border: 4px solid #eeede9;
-        padding-top: 60px;
-        padding-bottom: 40px;
     }
-    
-    .SubmissionAddressHeader {
-        font-family: 'Baloo Chettan 2', cursive;
-    }
-    
-    .submissionAddress__form{
-        padding-left: 5%;
-        padding-right: 5%;
-        font-family: 'Roboto', sans-serif;
-        font-size: 20px;
-        padding-bottom: 30px;
-    }
-    
-    .submissionFormInfo {
-        text-align: left;
-        margin-bottom: 10px;
-    }
-    
-    .SubmissionTitle {
-        text-decoration: underline;
-    }
-    
     
     .textInfo{
         width: 295px;

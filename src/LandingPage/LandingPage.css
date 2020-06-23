@@ -38,6 +38,12 @@
     border-radius: 7px;
   }
 
+  @media screen and (max-width: 425px) {
+    .lpInfo {
+      max-width: 300px;
+    }
+  }
+
   @media screen and (min-width: 1230px) {
     .Landing {
       margin-bottom: 10px;

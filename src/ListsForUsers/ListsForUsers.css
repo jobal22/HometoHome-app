@@ -111,6 +111,13 @@
     color: white;
 }
 
+@media screen and (max-width: 425px) {
+    .listsTeams {
+        max-width: 380px;
+    }
+}
+
+
 @media screen and (min-width: 1230px) {
     .listsTeams {
         max-width: 800px;

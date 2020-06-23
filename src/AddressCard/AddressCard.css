@@ -65,6 +65,13 @@
     cursor: pointer;
   }
 
+@media screen and (max-width: 425px) {
+    .ADB {
+        padding-left: 20px;
+    }
+}
+
+
 @media screen and (min-width: 1230px) {
     
     .addresses{

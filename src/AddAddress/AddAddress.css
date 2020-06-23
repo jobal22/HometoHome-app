@@ -22,6 +22,12 @@
     margin-bottom: 10px;
 }
 
+@media screen and (max-width: 425px) {
+    .AddAddress {
+        max-width: 380px;
+    }
+}
+
 @media screen and (min-width: 1230px) {
     .AddAddress {
         margin-top: 220px;
