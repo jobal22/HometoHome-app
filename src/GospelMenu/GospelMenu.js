@@ -9,6 +9,7 @@ const GospelMenu = ({ open, ...props }) => {
 
   return (
     <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
+        <div className='title'><h1 className='titleInfo'>Gospel Presentation</h1></div>
         <div class="dropdown" >
             <h2 class="dropbtn">1. The Problem</h2>
             <div class="dropdown-content" >

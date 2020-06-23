@@ -6,7 +6,7 @@ export const StyledMenu = styled.nav`
   justify-content: center;
   background: #0e2c3b;
   transform: ${({ open }) => open ? 'translateX(-100)' : 'translateX(-100%)'};
-  height: 570px;
+  height: 650px;
   text-align: left;
   padding-top: 35px;
   padding-bottom: 5px;
@@ -19,6 +19,11 @@ export const StyledMenu = styled.nav`
   min-width: 350px;
   max-width: 350px;
 
+  h1 {
+      color: white;
+      padding-left: 20px;
+      text-decoration: underline;
+  }
 
 
   h2 {
@@ -43,7 +48,7 @@ export const StyledMenu = styled.nav`
 
   .dropdown{
     margin-top: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     border-radius: 7px;
 }
   
@@ -68,9 +73,7 @@ export const StyledMenu = styled.nav`
     display: block;
   }
 
-//   .dropdown-content a:hover {background-color: #f1f1f1;}
 .dropdown:hover .dropdown-content {display: block;}
-// .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 @media screen and (min-width: 1230px) {
     margin-bottom: 250px;
