@@ -17,9 +17,6 @@ export default class HomePage extends Component {
     render() {
         return (
             <div className='hpMain'>
-                <header className="Header">
-                    <h1>Home to Home</h1>
-                </header>
                 <div className='adminUser'>
                 <section className='admin'>
                     <Link to={ '/main/admin'}>
