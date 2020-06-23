@@ -17,7 +17,7 @@ export default class Administration extends Component {
             <div className="Administration">
                 <div className="adminPage">
                     {lists.map(list =>
-                    <div className = 'adminList'>
+                    <div className = 'adminList' key={list.id}>
                         <Lists
                             key={list.id}
                             id={list.id}

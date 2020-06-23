@@ -160,7 +160,7 @@ export default class AddAddress extends React.Component {
   };
 
   render() {
-    const { salvation, yes, no } = this.state
+    const { salvation } = this.state
     return (
       <section className='AddAddress'>
         <h2 className='AddAddressHeader'>Add Address</h2>

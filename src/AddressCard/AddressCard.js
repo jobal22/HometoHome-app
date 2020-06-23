@@ -28,10 +28,9 @@ export default class AddressCard extends Component {
           this.context.deleteAddress(addressId)
       })
       .catch(error => {
-        console.error('this one', { error })
+        console.error('there is an error', { error })
       })
   }
-
 
   render() {
     const {id, street, city, state, zip} = this.props

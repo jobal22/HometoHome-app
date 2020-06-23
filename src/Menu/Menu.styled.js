@@ -27,10 +27,6 @@ export const StyledMenu = styled.nav`
     color: white;
     text-decoration: none;
     transition: color 0.3s linear;
-    // @media (max-width: ${({ theme }) => theme.mobile}) {
-    //   font-size: 1.5rem;
-    //   text-align: center;
-    // }
     :focus {
       outline: none !important;
     }
@@ -41,7 +37,6 @@ export const StyledMenu = styled.nav`
 }
   @media screen and (min-width: 1230px) {
     display: flex;
-    // flex-direction: column;
     justify-content: center;
     text-align: right;
     padding: 10px;

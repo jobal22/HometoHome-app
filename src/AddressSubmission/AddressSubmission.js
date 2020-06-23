@@ -45,7 +45,6 @@ export default class AddressSubmission extends Component {
       };
 
       handleChangeGospelPresentation = e => {
-        // console.log(e.target.id, 'gospelLabel')
         this.setState({ gospelpresentation: e.target.id})
       };
 

@@ -1,45 +1,56 @@
-import React from 'react';
+import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import HometoHomeContext from '../Context/HometoHomeContext'
+import { findList} from '../address-helpers.js'
 import AddressCard from '../AddressCard/AddressCard.js';
 import './Lists.css';
 
-export default function List(props) {
-  return (
-    <div className='listContainer'>
-    <section className='list'>
-      <header className='list-header'>
-          <h2>{props.name}</h2>
-      </header>
+
+export default class List extends Component {
+    
+    static contextType = HometoHomeContext;
+
+    
+    render() {
+        const props = this.props
+        const listId = props.id
+        const {lists=[], addresses=[]} = this.context
+        const list = findList (lists, listId) || {}
+        const address = addresses.filter(address=>list.gpid == address.gospelpresentation && list.nsid == address.newsalvations);
+        return (
+          <div className='listContainer'>
+            <section className='list'>
+              <header className='list-header'>
+                  <h2>{list.name}</h2>
+              </header>
+
+              <div className='addAddresses__button'>
+                <button className='addAddresses' type='submit'>
+                  <Link  className='addAddressesLink' to={`/admin-add-address`}>Add Addresses</Link>
+                </button>
+              </div>
+
+              <div className='List-cards'>
+                {address.map((address) =>
+                  <AddressCard 
+                      key={address.id}
+                      id={address.id}
+                      street={address.street}
+                      city={address.city}
+                      state={address.state}
+                      zip={address.zip}
+                      name={address.name}
+                      phone={address.phone}
+                      gospelpresentation={address.gospelpresentation}
+                      newsalvations={address.newsalvations}
+                      notes={address.notes}
+                  />
+                )}
+              </div>
 
 
-      <div className='addAddresses__button'>
-        <button className='addAddresses' type='submit'>
-          <Link  className='addAddressesLink' to={`/admin-add-address`}>Add Addresses</Link>
-        </button>
-      </div>
-
-
-      <div className='List-cards'>
-          {props.addresses.map((address) =>
-            <AddressCard 
-                key={address.id}
-                id={address.id}
-                street={address.street}
-                city={address.city}
-                state={address.state}
-                zip={address.zip}
-                name={address.name}
-                phone={address.phone}
-                gospelpresentation={address.gospelpresentation}
-                newsalvations={address.newsalvations}
-                notes={address.notes}
-            />
-           )}
-      </div>
-    </section></div>
-  );
-}
-
-List.defaultProps = {
-  onClickAdd:()=>{},
+            </section>            
+          </div>
+        )
+    }
 }

@@ -78,7 +78,6 @@ export default class ListsForUsers extends Component {
         const list = findList (lists, listId) || {}
         const address = addresses.filter(address=>list.gpid == address.gospelpresentation && list.nsid == address.newsalvations);
         const addressCount = addresses.filter(address=>list.gpid == address.gospelpresentation && list.nsid == address.newsalvations).length;
-        console.log(addressCount)
         return (
             <div className="listsTeams">
               <section>

@@ -4,11 +4,8 @@
   }
   
   .lp-header {
-    /* padding: 12% 0; */
     padding-top: 125px;
     padding-bottom: 25px;
-    /* font-family: 'Shadows Into Light Two', cursive; */
-    /* font-family: 'Architects Daughter', cursive; */
     font-family: 'Merienda', cursive;
   }
   
@@ -16,7 +13,6 @@
     text-align: left;
     min-height: 200px;
     max-width: 400px;
-    /* padding: 6% 0; */
     margin-left: auto;
     margin-right: auto;
     padding: 30px 30px;
@@ -35,9 +31,6 @@
   .landToHome {
     background-color: #bfb391;
     color: white;
-    /* font-family: 'Didto', serif; */
-    /* font-family: 'Architects Daughter', cursive; */
-    /* font-family: 'Merienda', cursive; */
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     text-decoration: none;
@@ -68,9 +61,6 @@
   .landToHome {
     background-color: #bfb391;
     color: white;
-    /* font-family: 'Didto', serif; */
-    /* font-family: 'Architects Daughter', cursive; */
-    /* font-family: 'Merienda', cursive; */
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     text-decoration: none;
