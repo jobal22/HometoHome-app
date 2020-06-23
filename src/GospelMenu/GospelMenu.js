@@ -18,7 +18,8 @@ const GospelMenu = ({ open, ...props }) => {
         <div class="dropdown" >
             <h2 class="dropbtn">2. The Solution</h2>
             <div class="dropdown-content" >
-                <p>"...Christ died for our sins in accordance with the Scriptures, that he was buried, that he was raised on the third day in accordance with the Scriptures..." (1 Corinthians 15:3-4)</p>
+                <p>"...Christ died for our sins in accordance with the Scriptures, that he was buried, that he was raised on the third day in accordance with the Scriptures..." 
+                    <br></br>(1 Corinthians 15:3-4)</p>
             </div>
         </div>
         <div class="dropdown" >
