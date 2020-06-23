@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import HometoHomeContext from '../Context/HometoHomeContext'
 import { findAddress } from '../address-helpers.js'
+import GHM from '../GHM/GHM.js'
 import config from '../config';
 import PropTypes from 'prop-types'
 import './AddressSubmission.css'
@@ -89,6 +90,7 @@ export default class AddressSubmission extends Component {
         const { salvation, notes  } = this.state
         return (
             <div className="SubmissionAddress">
+              <GHM/>
                 <section>
                   <h2 className='SubmissionTitle'>Address Form</h2>
                   <h3 className='SubmissionAddressHeader'>{address.street} {address.city} {address.state} {address.zip}</h3>
