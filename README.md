@@ -1,68 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Home to Home App
 
-## Available Scripts
+Link to live app: https://hometohome-app.now.sh/
 
-In the project directory, you can run:
+## Screen Shots
+![Home to Home: Landing Page](src/img/h2h-Welcome.png)
 
-### `npm start`
+![Home to Home: Home Page](src/img/h2h-HomePage.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Home to Home: Admin Page](src/img/h2h-Admin.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![Home to Home: User Page](src/img/h2h-Users.png)
 
-### `npm test`
+![Home to Home: User's Team Page](src/img/h2h-Users-Teams.png)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Home to Home: User Address Submission Page](src/img/h2h-AddressSubmission.png)
 
-### `npm run build`
+![Home to Home: Gospel Information Page](src/img/h2h-GospelInfo.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Summary of App
+This app allows users to coordinator addresses for neighborhood evangelism and outreach strategies and manage the contact information from each visit.
+The app is divided into two sections: 1) Administration and 2) Users.
+The Administration section allows admin users to see the progress of addresses as they move through Lists based on the interaction with residents. The Administration section also allows admin users to add, edit, and remove addresses.
+The Users section allows users to access and update address information based on interactions with residents. The Users section also allows users to access Gospel information to help them communicate more clearly to each set of residents.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Technologies Used
+React.js/JSX/Enzyme/Jest/CSS

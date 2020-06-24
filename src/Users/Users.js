@@ -24,12 +24,14 @@ export default class Users extends Component {
                 {lists.map(list => 
                     <li key={list.id}>
                         <Link className='UsersListLink' key={list.id} to={`/main/users/list/${list.id}`}>
+                        <h3>{list.name}</h3>
+                        </Link>
+                        <div className='ULNum'>
                             <span className='UserAddressNumbers'>
                                 {countAddressesForList(addresses, list.gpid, list.nsid)}
                             </span>
+                        </div>
 
-                            <h3>{list.name}</h3>
-                        </Link>
                     </li>
                 )}
                 </ul>

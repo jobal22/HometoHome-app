@@ -9,6 +9,7 @@
     height: 100%;
     min-height: 95vh;
     padding-bottom: 80px;
+    min-width: 373px;
   }
   
   .App__nav {
@@ -21,6 +22,8 @@
     left: 0;
     right: 0;
     z-index: 10;
+    min-width: 373px;
+
   }
 
 

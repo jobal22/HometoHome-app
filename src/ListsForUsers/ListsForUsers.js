@@ -42,7 +42,7 @@ export default class ListsForUsers extends Component {
         e.preventDefault()
         const { addressId } = this.props.match.params
         const { teamId } = this.state
-        const newAddress = { teamId }
+        const newAddress = { teamId }    
         fetch(config.API_ENDPOINT + `/${addressId}`, {
           method: 'PATCH',
           body: JSON.stringify(newAddress),

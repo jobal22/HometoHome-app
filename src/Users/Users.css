@@ -2,7 +2,6 @@
   padding-top: 150px;
   padding-bottom: 50px;
   margin-bottom: 60px;
-
 }
 
 .Users__list {
@@ -16,7 +15,7 @@
     font-family: 'Baloo Chettan 2', cursive;
     margin-bottom: 50px;
     background-color: #A4B1cA;
-  
+    /* text-align: left; */
   }
   
 .UsersListLink {
@@ -34,11 +33,19 @@
     color: white;
     cursor: pointer;
   }
+
+  .ULNum{
+    display: inline;
+    position: relative;
+    top: 40px;
+    right: 20px;
+  }
   
   .UserAddressNumbers {
-    display: block;
+    width: 20px;
     float: right;
     font-size: 15px;
+    font-weight: bold;
   }
 
 @media screen and (max-width: 425px) {
@@ -76,7 +83,14 @@
     text-decoration: underline;
     color: black;
     text-align: center;
-
   }
+
+.ULNum{
+  display: inline;
+  position: relative;
+  top: 60px;
+  right: 20px;
+}
+
 
 }

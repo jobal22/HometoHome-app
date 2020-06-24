@@ -7,7 +7,7 @@ export const StyledMenu = styled.nav`
   justify-content: center;
   background: #0e2c3b;
   transform: ${({ open }) => open ? 'translateX(-100)' : 'translateX(100%)'};
-  height: 50vh;
+  height: 380px;
   text-align: right;
   padding: 10px;
   padding-top: 45px;
@@ -16,7 +16,7 @@ export const StyledMenu = styled.nav`
   right: 0;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
-  width: 20vh;
+  width: 169.4px;
 
   a {
     font-size: 2rem;
