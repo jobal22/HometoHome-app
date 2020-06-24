@@ -3,18 +3,33 @@
 Link to live app: https://hometohome-app.now.sh/
 
 ## Screen Shots
+
+Home to Home: Landing Page:
+This page gives the user information about the app.
 ![Home to Home: Landing Page](img/h2h-Welcome.png)
 
+Home to Home: Home Page:
+This page gives the user options between Admin and User sections.
 ![Home to Home: Home Page](img/h2h-HomePage.png)
 
-![Home to Home: Admin Page](mg/h2h-Admin.png)
+Home to Home: Admin Page:
+This page gives the admin-user the availability to see users address-progression, as well as, edit, remove, and add addresses.
+![Home to Home: Admin Page](img/h2h-Admin.png)
 
+Home to Home: User Page:
+This page gives the user access to different teams, which holds addresses.
 ![Home to Home: User Page](img/h2h-Users.png)
 
+Home to Home: User's Team Page:
+This page gives the user access to addresses within a specific group, as well as, allow them to add addresses.
 ![Home to Home: User's Team Page](img/h2h-Users-Teams.png)
 
+Home to Home: User Address Submission Page:
+This page gives the user the option of updating address information.
 ![Home to Home: User Address Submission Page](img/h2h-AddressSubmission.png)
 
+Home to Home: Gospel Information Page:
+This page gives the user information about the content that should be shared at each address.
 ![Home to Home: Gospel Information Page](img/h2h-GospelInfo.png)
 
 ## Summary of App
