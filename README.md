@@ -21,7 +21,7 @@ This page gives the admin-user the availability to see users address-progression
 
 User Page:
 
-This page gives the user access to different teams, which holds addresses.
+This page gives the user access to different teams, which holds addresses, as well as, shows a number to the right of the teams which allows users to see the number of addresses currently in each team.
 ![Home to Home: User Page](img/h2h-Users.png)
 
 User's Team Page:
