@@ -26,10 +26,6 @@ export const StyledBurger = styled.button`
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
-    // transform-origin: 12px 12px ;
-    // :first-child {
-    //   transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
-    // }
   }
 
   spanb {

@@ -59,7 +59,6 @@ export const StyledMenu = styled.nav`
     margin-left: 30px;
     background-color: transparent;
     width: 300px;
-    // box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 7px;
     border: 1px solid #bfb391;
     z-index: 1;

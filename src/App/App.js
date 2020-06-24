@@ -9,6 +9,7 @@ import AddAddress from '../AddAddress/AddAddress.js'
 import AdminAddAddress from '../AdminAddAddress/AdminAddAddress.js'
 import AddressSubmission from '../AddressSubmission/AddressSubmission.js'
 import Users from '../Users/Users.js'
+import Help from '../Help/Help.js'
 import ListsForUsers from '../ListsForUsers/ListsForUsers.js'
 import config from '../config'
 import LandingPage from '../LandingPage/LandingPage.js'
@@ -90,6 +91,7 @@ export default class App extends Component {
         <Route path = "/add-address" component={AddAddress}/>
         <Route path = "/admin-add-address" component={AdminAddAddress}/>
         <Route path = "/edit-address/:addressId" component={EditAddress}/>
+        <Route path = "/help" component={Help}/>
       </>
     )
   }

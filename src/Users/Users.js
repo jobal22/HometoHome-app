@@ -28,7 +28,7 @@ export default class Users extends Component {
                         </Link>
                         <div className='ULNum'>
                             <span className='UserAddressNumbers'>
-                                {countAddressesForList(addresses, list.gpid, list.nsid)}
+                                ({countAddressesForList(addresses, list.gpid, list.nsid)})
                             </span>
                         </div>
 
