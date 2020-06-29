@@ -40,7 +40,7 @@ This page gives the user information about the content that should be shared at 
 ![Home to Home: Gospel Information Page](img/h2h-GospelInfo.png)
 
 ## Summary of App
-This app allows users to coordinator addresses for neighborhood evangelism and outreach strategies and manage the contact information from each visit.
+This app allows users to coordinate addresses for neighborhood evangelism and outreach strategies and manage the contact information from each visit.
 
 The app is divided into two sections: 1) Administration and 2) Users.
 
