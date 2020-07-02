@@ -5,7 +5,6 @@ import config from '../config'
 import PropTypes from 'prop-types'
 import './AddressCard.css';
 
-
 export default class AddressCard extends Component {
 
   static contextType = HometoHomeContext;

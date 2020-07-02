@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import { usePromiseTracker } from "react-promise-tracker";
 import Loader from 'react-loader-spinner';
 
-export const LoadingSpinnerComponent = (props) => {
-    const { promiseInProgress } = usePromiseTracker();
+export default function LoadingSpinner (props) {
+    // const { promiseInProgress } = usePromiseTracker();
     return (
-      promiseInProgress &&
         <div
           style={{
           width: "100%",

@@ -13,10 +13,10 @@ import Help from '../Help/Help.js'
 import ListsForUsers from '../ListsForUsers/ListsForUsers.js'
 import config from '../config'
 import LandingPage from '../LandingPage/LandingPage.js'
+import LoadingSpinner from '../loadingSpinner/loadingSpinner.js'
 import logo from '../Img/hometohome-Logo-3.png'
 import HM from '../HM/HM.js'
 import './App.css'
-
 
 export default class App extends Component {
   state = {
@@ -42,6 +42,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    this.setState({loading: true}, () => {
     Promise.all([
       fetch(`${config.API_ENDPOINT}/api/addresses`),
       fetch(`${config.API_ENDPOINT}/api/lists`),
@@ -52,11 +53,11 @@ export default class App extends Component {
         return Promise.all([addressesRes.json(), listsRes.json()])
       })
       .then(([addresses, lists]) => {
-        this.setState({ addresses, lists })
+        this.setState({ loading: false, addresses, lists })
       })
       .catch(error => {
         console.error({ error })
-      })
+      })})
   }
 
   handleAddAddress = address => {
@@ -107,6 +108,7 @@ export default class App extends Component {
       handleAddAddress: this.handleAddAddress,
       deleteAddress: this.handleDeleteAddress,
     }
+    const {loading}=this.state;
     return (
       <div className="App">
         <nav className="App__nav" >
@@ -127,6 +129,7 @@ export default class App extends Component {
               </div>
               </HometoHomeContext.Provider>
           </div>
+          {loading ? <LoadingSpinner/> : <></>}
         </main>
         <div className='footer'>
           <footer className='App__footer'>

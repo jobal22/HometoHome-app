@@ -4,13 +4,13 @@ import { findAddress } from '../address-helpers.js'
 import config from '../config'
 import PropTypes from 'prop-types'
 import './EditAddress.css'
-
+import Swal from 'sweetalert2'
 
 const Required = () => (
   <span className='AddressSubmit__required'>*</span>
 )
 
-export default class ListsForGroups extends Component {
+export default class EditAddress extends Component {
 
       static propTypes = {
         match: PropTypes.shape({
@@ -92,9 +92,13 @@ export default class ListsForGroups extends Component {
           })
           .then(() => {
             this.context.updateAddress(newAddress)
-            this.props.history.goBack()
+            Swal.fire('Congrats!', 'Address updated', 'success')
+            .then(() => {
+              this.props.history.goBack()
+            })
           })
           .catch(error => {
+            Swal.fire('Oops!', 'Address failed', 'error')
             console.error(error)
             this.setState({ error })
           })
@@ -133,7 +137,7 @@ export default class ListsForGroups extends Component {
                             name='street'
                             id='street'
                             required
-                            placeholder={street}
+                            defaultValue={street}
                             onChange={this.handleChangeStreet}
                             />
                         </div>
@@ -148,7 +152,7 @@ export default class ListsForGroups extends Component {
                             type='text'
                             name='city'
                             id='city'
-                            placeholder={city}
+                            defaultValue={city}
                             required
                             onChange={this.handleChangeCity}
                             />
@@ -164,7 +168,7 @@ export default class ListsForGroups extends Component {
                             type='text'
                             name='state'
                             id='state'
-                            placeholder={state}
+                            defaultValue={state}
                             required
                             onChange={this.handleChangeState}
                             />
@@ -179,7 +183,7 @@ export default class ListsForGroups extends Component {
                             type='number'
                             name='zip'
                             id='zip'
-                            placeholder={zip}
+                            defaultValue={zip}
                             onChange={this.handleChangeZip}
                             />
                         </div>
@@ -193,7 +197,7 @@ export default class ListsForGroups extends Component {
                             type='text'
                             name='name'
                             id='name'
-                            placeholder={name}
+                            defaultValue={name}
                             onChange={this.handleChangeName}
                             />
                         </div>
@@ -207,7 +211,7 @@ export default class ListsForGroups extends Component {
                             type='text'
                             name='email'
                             id='email'
-                            placeholder={email}
+                            defaultValue={email}
                             onChange={this.handleChangeEmail}
                             />
                         </div>
@@ -252,7 +256,7 @@ export default class ListsForGroups extends Component {
                             name='notes'
                             id='notes'
                             className='notes'
-                            placeholder={notes}
+                            defaultValue={notes}
                             onChange={this.handleChangeNotes}
                             />
                         </div>

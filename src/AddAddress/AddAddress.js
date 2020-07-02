@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import HometoHomeContext from '../Context/HometoHomeContext';
 import config from '../config'
 import './AddAddress.css';
+import Swal from 'sweetalert2'
 
 const Required = () => (
   <span className='AddAddress__required'>*</span>
@@ -138,15 +139,18 @@ export default class AddAddress extends React.Component {
           },
         })
         .then(res => {
-          if (!res.ok)
-            return res.json().then(error => Promise.reject(error))
+          return res.json()
         })
-        .then(() => {
-          this.context.handleAddAddress(newAddress)
+        .then((data) => {
+          console.log('JOBAL LOOK', data)
+          this.context.handleAddAddress(data)
+          Swal.fire('Congrats!', 'Address saved', 'success')
+          .then(() => {
           this.props.history.goBack()
-
+          })
         })
         .catch(error => {
+          Swal.fire('Oops!', 'Address failed', 'error')
           console.error(error)
           this.setState({ error })
 

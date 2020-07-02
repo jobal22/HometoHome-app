@@ -5,6 +5,7 @@ import GHM from '../GHM/GHM.js'
 import config from '../config';
 import PropTypes from 'prop-types'
 import './AddressSubmission.css'
+import Swal from 'sweetalert2'
 
 const Required = () => (
   <span className='AddressSubmit__required'>*</span>
@@ -75,9 +76,13 @@ export default class AddressSubmission extends Component {
           })
           .then(() => {
             this.context.updateAddress(newAddress)
-            this.props.history.goBack()
+            Swal.fire('Congrats!', 'Address submitted', 'success')
+            .then(() => {
+              this.props.history.goBack()
+            })
           })
           .catch(error => {
+            Swal.fire('Oops!', 'Address failed', 'error')
             console.error(error)
             this.setState({ error })
           })
