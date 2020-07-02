@@ -1,12 +1,13 @@
 import React from 'react';
-import HamburgerMenu from './HamburgerMenu';
-import HometoHomeContext from '../Context/HometoHomeContext'
 import { shallow } from 'enzyme';
+import HamburgerMenu from './HamburgerMenu';
+import HometoHomeContext from '../Context/HometoHomeContext';
 
-describe("HamburgerMenu component", () => {
-  it("renders without crashing", () => {
+describe('HamburgerMenu component', () => {
+  it('renders without crashing', () => {
     shallow(
-    <HometoHomeContext.Provider >
-    <HamburgerMenu/></HometoHomeContext.Provider>);
-    });
+      <HometoHomeContext.Provider >
+        <HamburgerMenu />
+      </HometoHomeContext.Provider>);
+  });
 });

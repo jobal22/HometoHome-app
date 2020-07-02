@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 export default React.createContext({
-    addresses: [],
-    lists: [],
-    addList: () => {},
-    addAddress: () => {},
-    updateAddress: () => {},
-    deleteAddress: () => {},
-})
+  addresses: [],
+  lists: [],
+  addList: () => {},
+  addAddress: () => {},
+  updateAddress: () => {},
+  deleteAddress: () => {},
+});

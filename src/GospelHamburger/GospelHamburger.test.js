@@ -1,12 +1,13 @@
 import React from 'react';
-import GospelHamburger from './GospelHamburger';
-import HometoHomeContext from '../Context/HometoHomeContext'
 import { shallow } from 'enzyme';
+import GospelHamburger from './GospelHamburger';
+import HometoHomeContext from '../Context/HometoHomeContext';
 
-describe("GospelHamburger component", () => {
-  it("renders without crashing", () => {
+describe('GospelHamburger component', () => {
+  it('renders without crashing', () => {
     shallow(
-    <HometoHomeContext.Provider >
-    <GospelHamburger/></HometoHomeContext.Provider>);
-    });
+      <HometoHomeContext.Provider >
+        <GospelHamburger />
+      </HometoHomeContext.Provider>);
+  });
 });

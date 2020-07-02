@@ -18,7 +18,6 @@ export const StyledBurger = styled.button`
     outline: none !important;
   }    
 
-
   spana {
     width: 1.5rem;
     height: 0.25rem;

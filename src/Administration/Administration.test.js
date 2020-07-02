@@ -1,17 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'
+import { shallow } from 'enzyme';
 import Administration from './Administration';
+import HometoHomeContext from '../Context/HometoHomeContext';
 
-describe("Administration component", () => {
-  it("renders without crashing", () => {
-    const div = document.createElement("div");
-    ReactDOM.render(
-      <BrowserRouter>
+describe('Administration component', () => {
+  it('renders without crashing', () => {
+    shallow(
+      <HometoHomeContext.Provider >
         <Administration />
-      </BrowserRouter>,
-      div
-    )
-    ReactDOM.unmountComponentAtNode(div)
-    });
+      </HometoHomeContext.Provider>);
+  });
 });

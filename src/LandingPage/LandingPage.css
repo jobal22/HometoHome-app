@@ -62,17 +62,15 @@
       padding: 50px 0;
       background-color: white;
       text-decoration: none;
-  }
+    }
   
-  .landToHome {
-    background-color: #bfb391;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 5px;
-    border-radius: 7px;
-  }
-
-  
+    .landToHome {
+      background-color: #bfb391;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 5px;
+      border-radius: 7px;
+    }
   }

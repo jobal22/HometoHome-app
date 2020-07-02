@@ -25,7 +25,6 @@ export const StyledMenu = styled.nav`
       text-decoration: underline;
   }
 
-
   h2 {
     font-size: 17px;
     text-transform: uppercase;

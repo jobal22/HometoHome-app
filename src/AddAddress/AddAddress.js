@@ -1,9 +1,9 @@
 import React from  'react';
 import PropTypes from 'prop-types';
 import HometoHomeContext from '../Context/HometoHomeContext';
-import config from '../config'
+import config from '../config';
 import './AddAddress.css';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 const Required = () => (
   <span className='AddAddress__required'>*</span>

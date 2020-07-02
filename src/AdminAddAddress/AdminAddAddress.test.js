@@ -1,12 +1,13 @@
 import React from 'react';
-import AdminAddAddress from './AdminAddAddress';
-import HometoHomeContext from '../Context/HometoHomeContext'
 import { shallow } from 'enzyme';
+import AdminAddAddress from './AdminAddAddress';
+import HometoHomeContext from '../Context/HometoHomeContext';
 
-describe("AdminAddAddress component", () => {
-  it("renders without crashing", () => {
+describe('AdminAddAddress component', () => {
+  it('renders without crashing', () => {
     shallow(
-    <HometoHomeContext.Provider >
-    <AdminAddAddress /></HometoHomeContext.Provider>);
-    });
+      <HometoHomeContext.Provider >
+        <AdminAddAddress />
+      </HometoHomeContext.Provider>);
+  });
 });

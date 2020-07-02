@@ -1,12 +1,13 @@
 import React from 'react';
-import Lists from './Lists';
-import HometoHomeContext from '../Context/HometoHomeContext'
 import { shallow } from 'enzyme';
+import Lists from './Lists';
+import HometoHomeContext from '../Context/HometoHomeContext';
 
-describe("Lists component", () => {
-  it("renders without crashing", () => {
+describe('Lists component', () => {
+  it('renders without crashing', () => {
     shallow(
-    <HometoHomeContext.Provider >
-    <Lists/></HometoHomeContext.Provider>);
-    });
+      <HometoHomeContext.Provider >
+        <Lists />
+      </HometoHomeContext.Provider>);
+  });
 });

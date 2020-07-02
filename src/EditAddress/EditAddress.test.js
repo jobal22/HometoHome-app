@@ -1,12 +1,13 @@
 import React from 'react';
-import EditAddress from './EditAddress';
-import HometoHomeContext from '../Context/HometoHomeContext'
 import { shallow } from 'enzyme';
+import EditAddress from './EditAddress';
+import HometoHomeContext from '../Context/HometoHomeContext';
 
-describe("EditAddress component", () => {
-  it("renders without crashing", () => {
+describe('EditAddress component', () => {
+  it('renders without crashing', () => {
     shallow(
-    <HometoHomeContext.Provider >
-    <EditAddress/></HometoHomeContext.Provider>);
-    });
+      <HometoHomeContext.Provider >
+        <EditAddress/>
+      </HometoHomeContext.Provider>);
+  });
 });

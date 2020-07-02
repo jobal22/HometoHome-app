@@ -17,8 +17,6 @@ export const StyledBurger = styled.button`
   :focus {
     outline: none !important;
   }    
-
-
   
   span {
     width: 2rem;
