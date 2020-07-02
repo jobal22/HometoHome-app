@@ -12,6 +12,6 @@ describe('Users component', () => {
       </BrowserRouter>,
       div
     );
-    ReactDOM.unmountComponentAtNode(div);
+    ReactDOM.unmountComponentAtNode(div)
   });
 });

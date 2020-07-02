@@ -29,5 +29,5 @@ ReactDOM.render(
     <App />
     <LoadingIndicator />
   </BrowserRouter>,
-  document.getElementById('root'
+  document.getElementById('root')
 )
