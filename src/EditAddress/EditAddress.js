@@ -87,14 +87,14 @@ export default class EditAddress extends Component {
           },
         })
           .then(res => {
-            if (!res.ok)
-              return res.json().then(error => Promise.reject(error))
+            return res.ok
           })
           .then(() => {
+            console.log('JOBAL', this.props)
             this.context.updateAddress(newAddress)
             Swal.fire('Congrats!', 'Address updated', 'success')
             .then(() => {
-              this.props.history.goBack()
+              this.props.history.push('/main/admin')
             })
           })
           .catch(error => {
@@ -137,7 +137,7 @@ export default class EditAddress extends Component {
                             name='street'
                             id='street'
                             required
-                            defaultValue={street}
+                            placeholder={street}
                             onChange={this.handleChangeStreet}
                             />
                         </div>
@@ -152,7 +152,7 @@ export default class EditAddress extends Component {
                             type='text'
                             name='city'
                             id='city'
-                            defaultValue={city}
+                            placeholder={city}
                             required
                             onChange={this.handleChangeCity}
                             />
@@ -168,7 +168,7 @@ export default class EditAddress extends Component {
                             type='text'
                             name='state'
                             id='state'
-                            defaultValue={state}
+                            placeholder={state}
                             required
                             onChange={this.handleChangeState}
                             />
@@ -183,7 +183,7 @@ export default class EditAddress extends Component {
                             type='number'
                             name='zip'
                             id='zip'
-                            defaultValue={zip}
+                            placeholder={zip}
                             onChange={this.handleChangeZip}
                             />
                         </div>
@@ -197,7 +197,7 @@ export default class EditAddress extends Component {
                             type='text'
                             name='name'
                             id='name'
-                            defaultValue={name}
+                            placeholder={name}
                             onChange={this.handleChangeName}
                             />
                         </div>
@@ -211,7 +211,7 @@ export default class EditAddress extends Component {
                             type='text'
                             name='email'
                             id='email'
-                            defaultValue={email}
+                            placeholder={email}
                             onChange={this.handleChangeEmail}
                             />
                         </div>
@@ -256,7 +256,7 @@ export default class EditAddress extends Component {
                             name='notes'
                             id='notes'
                             className='notes'
-                            defaultValue={notes}
+                            placeholder={notes}
                             onChange={this.handleChangeNotes}
                             />
                         </div>

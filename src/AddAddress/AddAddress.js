@@ -142,7 +142,6 @@ export default class AddAddress extends React.Component {
           return res.json()
         })
         .then((data) => {
-          console.log('JOBAL LOOK', data)
           this.context.handleAddAddress(data)
           Swal.fire('Congrats!', 'Address saved', 'success')
           .then(() => {
