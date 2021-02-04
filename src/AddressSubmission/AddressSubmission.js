@@ -98,7 +98,7 @@ export default class AddressSubmission extends Component {
               <GHM/>
                 <section>
                   <h2 className='SubmissionTitle'>Address Form</h2>
-                  <h3 className='SubmissionAddressHeader'>{address.street} {address.city} {address.state} {address.zip}</h3>
+                  <h3 className='SubmissionAddressHeader'>{address.number} {address.street} {address.city} {address.state} {address.zip}</h3>
                 </section>
                 <section>
                     <form

@@ -32,13 +32,13 @@ export default class AddressCard extends Component {
   }
 
   render() {
-    const {id, street, city, state, zip} = this.props
+    const {id, number, street, city, state, zip} = this.props
     return (
       <div className='AddressCards'>
         <section className='addresses'>
           <div className='ADL'>
             <Link className='addressesLink' to={`/main/address/${id}`}>
-              <p className='addressContent' >{street}{' '}{city}{' '}{state}{' '}{zip}{' '}</p>
+              <p className='addressContent' >{number}{' '}{street}{' '}{city}{' '}{state}{' '}{zip}{' '}</p>
             </Link>
           </div>
           <div className='ADB'>

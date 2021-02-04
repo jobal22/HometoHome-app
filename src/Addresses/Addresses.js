@@ -13,8 +13,9 @@ export default class Addresses extends Component {
 static contextType = HometoHomeContext;
   render() {
     const {addresses=[]}= this.context
-    const { addressId} = this.props.match.params
+    const {addressId} = this.props.match.params
     const a = findAddress (addresses, addressId) || {}
+    console.log('where aer they', a)
     return (
       <div className="totalAddress">
         <section>
@@ -27,7 +28,7 @@ static contextType = HometoHomeContext;
           <h2>Address Information</h2>
         </div>
         <div>
-          <h3 className='addressSt'><b>Street: {a.street}</b></h3>
+          <h3 className='addressSt'><b>Street: {a.number} {a.street}</b></h3>
           <p className='addressP'>
             City: {a.city}<br></br>
             State: {a.state}<br></br>

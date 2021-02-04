@@ -95,7 +95,7 @@ export default class ListsForUsers extends Component {
                     <li className='addrSecLinkList'>
                       <Link className='addrSecLink' to={`/main/address-submission/${a.id}`}>
                           <h3 className='addrSecLinkH3'>
-                            {a.street} {a.city} {a.state} {a.zip}
+                            {a.number} {a.street} {a.city} {a.state} {a.zip}
                           </h3>
                       </Link>
                         </li>
